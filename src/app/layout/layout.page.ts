@@ -14,6 +14,7 @@ declare type PageTab = {
   styleUrls: ['./layout.page.scss'],
 })
 export class LayoutPage implements OnInit {
+  title = 'Layout';
   tabs: PageTab[];
   constructor(private auth: AuthService, private router: Router) {
     this.tabs = [
