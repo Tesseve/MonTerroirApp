@@ -38,7 +38,7 @@
 		</data>
 		<key>Frameworks/Capacitor.framework/Capacitor</key>
 		<data>
-		7pwRQNpQWUYyPvF9Fk0PLMf4HHY=
+		kpg9N7Iah8syG5n61En0TsLFGXk=
 		</data>
 		<key>Frameworks/Capacitor.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/CapacitorApp.framework/CapacitorApp</key>
 		<data>
-		n0dKic7SWTXi/Iu8h2nUk9/WNG8=
+		LExAzDVbH92/5O6/hMOepYg1Z0Q=
 		</data>
 		<key>Frameworks/CapacitorApp.framework/Info.plist</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/CapacitorHaptics.framework/CapacitorHaptics</key>
 		<data>
-		FLNNEG8vesLDsg+PHmTfbVo1+x0=
+		C8voz7enIRnpzwhnB6WHlm950B4=
 		</data>
 		<key>Frameworks/CapacitorHaptics.framework/Info.plist</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Frameworks/CapacitorKeyboard.framework/CapacitorKeyboard</key>
 		<data>
-		HCC/BKG8X19M5FMmQK3wjuO3DKg=
+		8ZeFoBfMcNj0TjXzNbttrqcc1zw=
 		</data>
 		<key>Frameworks/CapacitorKeyboard.framework/Info.plist</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Frameworks/CapacitorStatusBar.framework/CapacitorStatusBar</key>
 		<data>
-		Y/UI0m3zj4BJ2axBUxKzjQEKo+w=
+		hxH42mwbgSxjfzxxyz/uTmHyTtI=
 		</data>
 		<key>Frameworks/CapacitorStatusBar.framework/Info.plist</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Frameworks/Cordova.framework/Cordova</key>
 		<data>
-		92pSOKXmZFOIeJntevTCCfudrGY=
+		6Xpp3sUPNKzHVVuSxo2Nuq1N0Ds=
 		</data>
 		<key>Frameworks/Cordova.framework/Info.plist</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Uyh+8f0lhFuJ+v2vwVZMJrVWcwg=
+		vF5OdePw0JOLxmb9TPrGNk5UDRY=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -5799,7 +5799,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hLj7fOQUHn3lzhbdus/L2coRPNaoMxrIPjjjfRon0gc=
+			1gzY8J6IRMSEAVUwi5T9lQcB1fu5gvixM94R7Q4PaxQ=
 			</data>
 		</dict>
 		<key>Frameworks/Capacitor.framework/Info.plist</key>
@@ -5827,7 +5827,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			25tngPxzrZlbWEZ1XZDgwvf5rQGEApkCV/x+cATJcKM=
+			xLp/D8fIkKlaAFwRtJMN70Y1l61QGsRcF/rxcs/HEM8=
 			</data>
 		</dict>
 		<key>Frameworks/CapacitorApp.framework/Info.plist</key>
@@ -5848,7 +5848,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			l1i3cd4zsle7825JOE0XMmCriNoKIDFL0IerVbeXkb8=
+			eL3/3cpcF6RxwZdI4d7pILE0sVVF23+yEBibqfTPnhY=
 			</data>
 		</dict>
 		<key>Frameworks/CapacitorHaptics.framework/Info.plist</key>
@@ -5869,7 +5869,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GUGng30OrOdmEkoOVw4HZ82Bw9EX2at07/xd0dbyoII=
+			MyHyfnT6iAzrb7GGpq6zd7FHFCGD40Tw/4/jAALTsKI=
 			</data>
 		</dict>
 		<key>Frameworks/CapacitorKeyboard.framework/Info.plist</key>
@@ -5890,7 +5890,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ygm8gqt5D4teUykTG6EamBGPZBUH8J1254JJ0U5QlOk=
+			/MCsEeuXA6cu0wWV5yp+kI9MG2xOIE9bvrKN8xr12q0=
 			</data>
 		</dict>
 		<key>Frameworks/CapacitorStatusBar.framework/Info.plist</key>
@@ -5911,7 +5911,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+c2cXjjxgiXTv2rfl2RVwAuOcafJYYVE+28LufTAMtE=
+			Ai+2olGSt792b/6xC0HJaYIJdP7m27Lz/b5pOQGnoP8=
 			</data>
 		</dict>
 		<key>Frameworks/Cordova.framework/Info.plist</key>
