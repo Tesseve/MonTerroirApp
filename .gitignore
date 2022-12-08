@@ -67,3 +67,4 @@ Thumbs.db
 
 .vscode
 src/environments/*
+!src/environments/environment.sample.ts
