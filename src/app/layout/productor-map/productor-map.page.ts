@@ -11,10 +11,4 @@ export class ProductorMapPage implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {}
-
-  logOut() {
-    console.log('logging out...');
-    this.auth.logOut();
-    this.router.navigateByUrl('/login');
-  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 
 declare type PageTab = {
   title: string; // The title of the tab in the tab bar
@@ -13,11 +15,17 @@ declare type PageTab = {
 })
 export class LayoutPage implements OnInit {
   tabs: PageTab[];
-  constructor() {
+  constructor(private auth: AuthService, private router: Router) {
     this.tabs = [
       { title: 'Productor Map', icon: 'map', path: 'productor-map' },
     ];
   }
 
   ngOnInit() {}
+
+  logOut() {
+    console.log('logging out...');
+    this.auth.logOut();
+    this.router.navigateByUrl('/login');
+  }
 }

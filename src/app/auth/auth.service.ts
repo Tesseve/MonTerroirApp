@@ -26,12 +26,7 @@ export class AuthService {
   }
 
   isAuthenticated$(): Observable<boolean> {
-    return this.#auth$.pipe(
-      map((auth) => {
-        console.log(auth);
-        return Boolean(auth);
-      })
-    );
+    return this.#auth$.pipe(map((auth) => Boolean(auth)));
   }
 
   getUser$(): Observable<User | undefined> {
@@ -44,10 +39,8 @@ export class AuthService {
 
   logIn$(authRequest: AuthRequest): Observable<User> {
     const authUrl = `${API_URL}/auth/login`;
-    console.log(authUrl);
     return this.http.post<AuthResponse>(authUrl, authRequest).pipe(
       delayWhen((auth) => {
-        console.log(auth);
         return this.saveAuth$(auth);
       }),
       map((auth) => {
