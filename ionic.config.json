@@ -1,0 +1,7 @@
+{
+  "name": "mon-terroir",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
