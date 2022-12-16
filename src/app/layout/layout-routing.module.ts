@@ -9,15 +9,41 @@ const routes: Routes = [
     component: LayoutPage,
     children: [
       {
-        path: 'productor-map',
+        path: 'favoris',
         loadChildren: () =>
-          import('./productor-map/productor-map.module').then(
-            (m) => m.ProductorMapPageModule
+          import('../pages/favoris/favoris.module').then(
+            (m) => m.FavorisPageModule
+          ),
+      },
+      {
+        path: 'explore',
+        loadChildren: () =>
+          import('../pages/explore/explore.module').then(
+            (m) => m.ExplorePageModule
+          ),
+      },
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('../pages/home/home.module').then((m) => m.HomePageModule),
+      },
+      {
+        path: 'messages',
+        loadChildren: () =>
+          import('../pages/messages/messages.module').then(
+            (m) => m.MessagesPageModule
+          ),
+      },
+      {
+        path: 'profil',
+        loadChildren: () =>
+          import('../pages/profil/profil.module').then(
+            (m) => m.ProfilPageModule
           ),
       },
       {
         path: '',
-        redirectTo: 'productor-map',
+        redirectTo: 'home',
         pathMatch: 'full',
       },
     ],

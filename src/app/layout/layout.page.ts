@@ -14,11 +14,15 @@ declare type PageTab = {
   styleUrls: ['./layout.page.scss'],
 })
 export class LayoutPage implements OnInit {
-  title = 'Layout';
+  title = 'Mon terroir';
   tabs: PageTab[];
   constructor(private auth: AuthService, private router: Router) {
     this.tabs = [
-      { title: 'Productor Map', icon: 'map', path: 'productor-map' },
+      { title: 'Favoris', icon: 'star', path: 'favoris' },
+      { title: 'Explore', icon: 'search', path: 'explore' },
+      { title: 'Accueil', icon: 'home', path: 'home' },
+      { title: 'Messages', icon: 'chatbox-ellipses', path: 'messages' },
+      { title: 'Profil', icon: 'person', path: 'profil' },
     ];
   }
 

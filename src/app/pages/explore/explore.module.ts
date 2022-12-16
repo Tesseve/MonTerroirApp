@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProductorMapPageRoutingModule } from './productor-map-routing.module';
+import { ExplorePageRoutingModule } from './explore-routing.module';
 
-import { ProductorMapPage } from './productor-map.page';
+import { ExplorePage } from './explore.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductorMapPageRoutingModule
+    ExplorePageRoutingModule
   ],
-  declarations: [ProductorMapPage]
+  declarations: [ExplorePage]
 })
-export class ProductorMapPageModule {}
+export class ExplorePageModule {}
