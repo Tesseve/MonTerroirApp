@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Login</ion-title>
+        <ion-title>Register</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -32,7 +32,7 @@
 
         <div class="ion-padding">
             <!-- Submit button -->
-            <ion-button type="submit" expand="block" [disabled]="loginForm.invalid">Log in</ion-button>
+            <ion-button type="submit" expand="block" [disabled]="loginForm.invalid">Inscription</ion-button>
 
             <!-- Error message displayed if the login failed -->
             <ion-text color="danger" *ngIf="loginError">Username or password is invalid.</ion-text>
@@ -40,6 +40,6 @@
     </form>
 
     <div class="ion-padding">
-        <ion-button (click)="displayRegisterForm()" expand="block">Inscription</ion-button>
+        <ion-button (click)="displayLoginForm()" expand="block">Connexion</ion-button>
     </div>
 </ion-content>

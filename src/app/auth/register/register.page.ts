@@ -1,18 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-
-import { AuthService } from '../auth.service';
-import { AuthRequest } from '../../models/AuthRequest';
 import { NavController } from '@ionic/angular';
+import { AuthRequest } from 'src/app/models/AuthRequest';
+import { AuthService } from '../auth.service';
 
-/**
- * Login page.
- */
 @Component({
-  templateUrl: 'login.page.html',
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
-export class LoginPage {
+export class RegisterPage {
   /**
    * This authentication request object will be updated when the user
    * edits the login form. It will then be sent to the API.
@@ -62,7 +60,7 @@ export class LoginPage {
     });
   }
 
-  displayRegisterForm() {
-    this.nav.navigateForward('/register', { animated: false });
+  displayLoginForm() {
+    this.nav.navigateForward('/login', { animated: false });
   }
 }
