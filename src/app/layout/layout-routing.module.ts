@@ -34,6 +34,13 @@ const routes: Routes = [
             (m) => m.ConversationsPageModule
           ),
       },
+      {
+        path: 'conversations/:id',
+        loadChildren: () =>
+          import(
+            '../pages/conversations/conversation/conversation.module'
+          ).then((m) => m.ConversationPageModule),
+      },
 
       {
         path: 'profil',

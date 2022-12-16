@@ -7,15 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: ConversationsPage,
-    children: [
-      {
-        path: ':id',
-        loadChildren: () =>
-          import('./conversation/conversation.module').then(
-            (m) => m.ConversationPageModule
-          ),
-      },
-    ],
   },
 ];
 
