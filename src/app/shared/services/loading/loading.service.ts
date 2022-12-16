@@ -9,11 +9,11 @@ export class LoadingService {
 
   async showLoading(
     message?: string,
-    { duration = 3000, backDrop = true } = {}
+    { duration = undefined, backDrop = true } = {}
   ) {
     const loading = await this.loadingController.create({
       message: message || 'Chargement...',
-      duration: duration ?? 3000,
+      duration: duration,
       spinner: 'circles',
       backdropDismiss: backDrop ?? true,
     });
