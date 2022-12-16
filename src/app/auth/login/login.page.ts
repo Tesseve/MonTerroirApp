@@ -14,7 +14,6 @@ import { environment } from 'src/environments/environment';
   templateUrl: 'login.page.html',
 })
 export class LoginPage {
-  url: string = '';
   /**
    * This authentication request object will be updated when the user
    * edits the login form. It will then be sent to the API.
@@ -37,8 +36,6 @@ export class LoginPage {
       password: '',
     };
     this.loginError = false;
-
-    this.url = environment.apiURL;
   }
 
   /**

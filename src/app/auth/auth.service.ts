@@ -38,7 +38,7 @@ export class AuthService {
   }
 
   logIn$(authRequest: AuthRequest): Observable<User> {
-    const authUrl = `${API_URL}/auth/login`;
+    const authUrl = `${API_URL}auth/login`;
     return this.http.post<AuthResponse>(authUrl, authRequest).pipe(
       delayWhen((auth) => {
         return this.saveAuth$(auth);
