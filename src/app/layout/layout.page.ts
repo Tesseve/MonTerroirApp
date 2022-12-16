@@ -21,7 +21,7 @@ export class LayoutPage implements OnInit {
       { title: 'Favoris', icon: 'star', path: 'favoris' },
       { title: 'Explore', icon: 'search', path: 'explore' },
       { title: 'Accueil', icon: 'home', path: 'home' },
-      { title: 'Messages', icon: 'chatbox-ellipses', path: 'messages' },
+      { title: 'Messages', icon: 'chatbox-ellipses', path: 'conversations' },
       { title: 'Profil', icon: 'person', path: 'profil' },
     ];
   }

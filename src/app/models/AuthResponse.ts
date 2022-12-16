@@ -1,6 +1,6 @@
 import { User } from './User';
 
 export type AuthResponse = {
-  access_token: string;
+  accessToken: string;
   user: User;
 };

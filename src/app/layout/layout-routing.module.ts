@@ -28,12 +28,13 @@ const routes: Routes = [
           import('../pages/home/home.module').then((m) => m.HomePageModule),
       },
       {
-        path: 'messages',
+        path: 'conversations',
         loadChildren: () =>
-          import('../pages/messages/messages.module').then(
-            (m) => m.MessagesPageModule
+          import('../pages/conversations/conversations.module').then(
+            (m) => m.ConversationsPageModule
           ),
       },
+
       {
         path: 'profil',
         loadChildren: () =>

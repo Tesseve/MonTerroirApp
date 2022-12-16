@@ -21,7 +21,7 @@ export class ConversationService {
 
   async get(id: number, { forceFetchio = false } = {}) {
     let conversation: Conversation | undefined = this.conversations.find(
-      (conversation) => conversation.id === id
+      (conversation) => conversation._id === id
     );
 
     if (conversation && !forceFetchio) {
@@ -40,12 +40,12 @@ export class ConversationService {
 
   async update(conversation: Conversation) {
     const updatedConversation = await this.http.put(
-      `conversations/${conversation.id}`,
+      `conversations/${conversation._id}`,
       conversation
     );
 
     this.conversations = this.conversations.map((conversation) =>
-      conversation.id === updatedConversation.id
+      conversation._id === updatedConversation.id
         ? updatedConversation
         : conversation
     );
@@ -56,7 +56,7 @@ export class ConversationService {
   async delete(id: number) {
     await this.http.delete(`conversations/${id}`);
     this.conversations = this.conversations.filter(
-      (conversation) => conversation.id !== id
+      (conversation) => conversation._id !== id
     );
   }
 }

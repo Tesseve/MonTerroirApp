@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   getToken$(): Observable<string | undefined> {
-    return this.#auth$.pipe(map((auth) => auth?.access_token));
+    return this.#auth$.pipe(map((auth) => auth?.accessToken));
   }
 
   logIn$(authRequest: AuthRequest): Observable<User> {
