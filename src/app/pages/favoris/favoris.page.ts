@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favoris.page.scss'],
 })
 export class FavorisPage implements OnInit {
-  constructor() {
-    console.log('FavorisPage constructor');
-  }
+  constructor() {}
 
   ngOnInit() {}
 }

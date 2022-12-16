@@ -47,9 +47,6 @@ export class RegisterPage {
     // Hide any previous login error.
     this.loginError = false;
 
-    console.log('Logging in...');
-    console.log(this.authRequest);
-
     // Perform the authentication request to the API.
     this.auth.logIn$(this.authRequest).subscribe({
       next: () => this.router.navigate(['/'], { replaceUrl: true }),

@@ -44,9 +44,7 @@ export class AuthService {
         return this.saveAuth$(auth);
       }),
       map((auth) => {
-        console.log(auth);
         this.#auth$.next(auth);
-        console.log(`User ${auth.user.username} logged in`);
         return auth.user;
       })
     );
@@ -55,7 +53,6 @@ export class AuthService {
   logOut() {
     this.#auth$.next(undefined);
     this.storage.remove('auth');
-    console.log('User logged out');
   }
 
   private saveAuth$(auth: AuthResponse): Observable<void> {

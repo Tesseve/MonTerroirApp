@@ -29,7 +29,6 @@ export class LayoutPage implements OnInit {
   ngOnInit() {}
 
   logOut() {
-    console.log('logging out...');
     this.auth.logOut();
     this.router.navigateByUrl('/login');
   }
