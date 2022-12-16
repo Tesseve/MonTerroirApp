@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AuthRequest } from '../../models/AuthRequest';
 import { NavController } from '@ionic/angular';
+import { environment } from 'src/environments/environment';
 
 /**
  * Login page.
@@ -13,6 +14,7 @@ import { NavController } from '@ionic/angular';
   templateUrl: 'login.page.html',
 })
 export class LoginPage {
+  url: string = '';
   /**
    * This authentication request object will be updated when the user
    * edits the login form. It will then be sent to the API.
@@ -35,6 +37,8 @@ export class LoginPage {
       password: '',
     };
     this.loginError = false;
+
+    this.url = environment.apiURL;
   }
 
   /**
