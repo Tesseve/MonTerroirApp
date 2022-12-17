@@ -9,7 +9,7 @@ export class LoadingService {
 
   async showLoading(
     message?: string,
-    { duration = undefined, backDrop = true } = {}
+    { duration = 1000, backDrop = true } = {}
   ) {
     const loading = await this.loadingController.create({
       message: message || 'Chargement...',

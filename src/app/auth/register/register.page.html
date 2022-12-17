@@ -7,6 +7,17 @@
 <ion-content>
     <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
         <ion-list>
+
+            <!-- role input switch-->
+            <ion-item>
+                <ion-label>Role</ion-label>
+                <ion-select [(ngModel)]="authRequest.role" name="role" required="true">
+                    <ion-select-option value="client">Client</ion-select-option>
+                    <ion-select-option value="productor">productor</ion-select-option>
+                </ion-select>
+            </ion-item>
+
+
             <!-- Username input -->
             <ion-item>
                 <ion-label position="floating">Username</ion-label>

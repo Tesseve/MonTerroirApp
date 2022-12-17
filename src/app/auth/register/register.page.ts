@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { AuthRequest } from 'src/app/models/AuthRequest';
+import { AuthRegisterRequest } from 'src/app/models/AuthRegisterRequest';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class RegisterPage {
    * This authentication request object will be updated when the user
    * edits the login form. It will then be sent to the API.
    */
-  authRequest: AuthRequest;
+  authRequest: AuthRegisterRequest;
 
   /**
    * If true, it means that the authentication API has return a failed response
@@ -31,6 +31,11 @@ export class RegisterPage {
     this.authRequest = {
       username: '',
       password: '',
+      role: '',
+      location: {
+        type: 'Point',
+        coordinates: [0, 0],
+      },
     };
     this.loginError = false;
   }
@@ -48,7 +53,7 @@ export class RegisterPage {
     this.loginError = false;
 
     // Perform the authentication request to the API.
-    this.auth.logIn$(this.authRequest).subscribe({
+    this.auth.register$(this.authRequest).subscribe({
       next: () => this.router.navigate(['/'], { replaceUrl: true }),
       error: (err) => {
         this.loginError = true;

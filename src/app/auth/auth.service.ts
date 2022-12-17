@@ -6,8 +6,10 @@ import { delayWhen, map } from 'rxjs/operators';
 import { AuthResponse } from '../models/AuthResponse';
 import { User } from '../models/User';
 import { AuthRequest } from '../models/AuthRequest';
+import { AuthRegisterRequest } from '../models/AuthRegisterRequest';
 import { environment } from 'src/environments/environment';
 import { Storage } from '@ionic/storage-angular';
+import { Router } from '@angular/router';
 
 const API_URL = environment.apiURL;
 
@@ -18,7 +20,11 @@ const API_URL = environment.apiURL;
 export class AuthService {
   #auth$: ReplaySubject<AuthResponse | undefined>;
 
-  constructor(private http: HttpClient, private storage: Storage) {
+  constructor(
+    private http: HttpClient,
+    private storage: Storage,
+    private router: Router
+  ) {
     this.#auth$ = new ReplaySubject(1);
     this.storage.get('auth').then((auth) => {
       this.#auth$.next(auth);
@@ -50,9 +56,26 @@ export class AuthService {
     );
   }
 
-  logOut() {
+  register$(authRegisterRequest: AuthRegisterRequest): Observable<User> {
+    const authUrl = `${API_URL}auth/register`;
+    return this.http.post<AuthResponse>(authUrl, authRegisterRequest).pipe(
+      delayWhen((auth) => {
+        return this.saveAuth$(auth);
+      }),
+      map((auth) => {
+        console.log(auth);
+        this.#auth$.next(auth);
+        return auth.user;
+      })
+    );
+  }
+
+  logout() {
     this.#auth$.next(undefined);
     this.storage.remove('auth');
+
+    //navigate to login page and remove all pages from the stack wihtout animation
+    this.router.navigate(['/login'], { replaceUrl: true });
   }
 
   private saveAuth$(auth: AuthResponse): Observable<void> {
