@@ -20,7 +20,7 @@ const API_URL = environment.apiURL;
 export class AuthService {
   #auth$: ReplaySubject<AuthResponse | undefined>;
 
-  user: User | undefined;
+  #user: User | undefined;
 
   constructor(
     private http: HttpClient,
@@ -38,7 +38,7 @@ export class AuthService {
   }
 
   getUser(): User | undefined {
-    return this.user;
+    return this.#user;
   }
 
   getToken$(): Observable<string | undefined> {
@@ -53,7 +53,7 @@ export class AuthService {
       }),
       map((auth) => {
         this.#auth$.next(auth);
-        this.user = auth.user;
+        this.#user = auth.user;
         return auth.user;
       })
     );
@@ -68,7 +68,7 @@ export class AuthService {
       map((auth) => {
         console.log(auth);
         this.#auth$.next(auth);
-        this.user = auth.user;
+        this.#user = auth.user;
         return auth.user;
       })
     );
