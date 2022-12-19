@@ -1,0 +1,29 @@
+div.content {
+    background-color: #025549;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 60px;
+}
+
+#MyCircleGreen {
+    max-width: 130%;
+    height: auto;
+    border-radius: 200%;
+    position: relative;
+    left: -15%;
+    top: -10%;
+    box-shadow: 0 0 5px 5px rgb(16, 15, 15);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 60px 80px;
+    line-height: 1.5;
+    color: #D9D9D9;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-start',
@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
 })
 export class StartPage implements OnInit {
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
+  }
+
+  goTo(path: string) {
+    this.navController.navigateForward(path, { animated: false });
   }
 
 }
