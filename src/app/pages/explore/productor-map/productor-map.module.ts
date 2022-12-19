@@ -4,22 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { StartPageRoutingModule } from './start-routing.module';
+import { ProductorMapPageRoutingModule } from './productor-map-routing.module';
 
-import { StartPage } from './start.page';
-
+import { ProductorMapPage } from './productor-map.page';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
-
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StartPageRoutingModule,
+    ProductorMapPageRoutingModule,
     WidgetsModule,
   ],
-  declarations: [StartPage]
+  declarations: [ProductorMapPage],
 })
-export class StartPageModule { }
+export class ProductorMapPageModule {}

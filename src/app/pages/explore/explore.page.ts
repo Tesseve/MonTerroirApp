@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-explore',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore.page.scss'],
 })
 export class ExplorePage implements OnInit {
+  constructor(private navController: NavController) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  goToMap() {
+    this.navController.navigateForward('explore/map', { animated: false });
   }
-
 }
