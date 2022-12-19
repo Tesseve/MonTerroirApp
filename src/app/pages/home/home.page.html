@@ -1,7 +1,10 @@
 <div id="MyCircleGreen"></div>
+<div class="container">
+  <h1>Salut, <span class="myGreenName">{{user?.username}}</span></h1>
+  <h2 class="myDate">{{maDate | date:'dd.MM.YY'}}</h2>
 
-<h1>Salut, {{user?.username}}</h1>
-<h2>ma Date</h2>
-
+  <app-local-position-bar></app-local-position-bar>
+</div>
 <app-card-product *ngFor="let product of products"></app-card-product>
-<ion-button (click)="showLoading()">Show loading</ion-button>
+
+<!-- <ion-button (click)="showLoading()">Show loading</ion-button> -->

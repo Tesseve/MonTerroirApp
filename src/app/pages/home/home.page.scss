@@ -1,16 +1,28 @@
+.container {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 #MyCircleGreen {
     width : 25px;
     height : 25px;
-    background: linear-gradient(to bottom right, #063831, #016355);
+    background: linear-gradient(to bottom right, #063831 60%, #0eb09b );
     border-radius : 25px;  /* ou 50% */
     scale: 70;
     z-index: -50;
     position: relative;
     top: -70%;
-    left: 40%;
-
+    left: 45%;
 }
 
 h1 {
     color: #fff;
+}
+
+.myDate {
+    color: #fff;
+}
+
+.myGreenName {
+    color: #36DF8E;
 }
