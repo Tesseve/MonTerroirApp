@@ -1,5 +1,7 @@
-<h1>
-    Accueil
-</h1>
+<div id="MyCircleGreen"></div>
 
+<h1>Salut, {{user?.username}}</h1>
+<h2>ma Date</h2>
+
+<app-card-product *ngFor="let product of products"></app-card-product>
 <ion-button (click)="showLoading()">Show loading</ion-button>

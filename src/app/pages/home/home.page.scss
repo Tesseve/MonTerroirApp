@@ -1,0 +1,16 @@
+#MyCircleGreen {
+    width : 25px;
+    height : 25px;
+    background: linear-gradient(to bottom right, #063831, #016355);
+    border-radius : 25px;  /* ou 50% */
+    scale: 70;
+    z-index: -50;
+    position: relative;
+    top: -70%;
+    left: 40%;
+
+}
+
+h1 {
+    color: #fff;
+}

@@ -62,4 +62,15 @@ export class LoginPage {
   displayRegisterForm() {
     this.nav.navigateForward('/register', { animated: false });
   }
+
+
+  setUsername(username: string) {
+    console.log('username', username);
+    this.authRequest.username = username;
+  }
+
+  setPassword(password: string) {
+    console.log('password', password);
+    this.authRequest.password = password;
+  }
 }
