@@ -12,7 +12,7 @@ export class ProfilPage implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.getUser$().subscribe((user) => (this.user = user));
+    this.user = this.authService.getUser();
   }
 
   logout() {
