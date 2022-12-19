@@ -59,4 +59,10 @@ export class ConversationService {
       (conversation) => conversation._id !== id
     );
   }
+
+  async getAllMessages(id:number): Promise<any>{
+    const messages = await this.http.get(`conversations/${id}/messages`);
+    return messages.data;
+  }
+
 }

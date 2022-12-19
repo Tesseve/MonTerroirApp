@@ -1,9 +1,39 @@
-<div *ngIf="conversation">
+<h1>Messagerie</h1>
 
+<div *ngIf="conversation">
+    
     <h1>{{ conversation.name }}</h1>
 
-    <ion-content>
+    Messages
+    <div *ngFor="let message of messages">
+        {{ message.message }}
+    </div>
+    
+    <!-- <ion-content>
+        <ion-list>
+            <ion-item *ngFor="let message of conversation.messages">
+                <ion-avatar slot="start">
+                    <img [src]="message.user.avatar">
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{ message.user.name }}</h2>
+                    <p>{{ message.text }}</p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-content> -->
 
-    </ion-content>
+    <!-- <ion-footer>
+        <ion-toolbar>
+            <ion-item>
+                <ion-input placeholder="Message" [(ngModel)]="messageText"></ion-input>
+                <ion-button (click)="sendMessage()">Send</ion-button>
+            </ion-item>
+        </ion-toolbar>
+    </ion-footer> -->
+
+    <!-- <ion-content>
+
+    </ion-content> -->
 
 </div>
