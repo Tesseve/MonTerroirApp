@@ -29,6 +29,7 @@ export class AuthService {
   ) {
     this.#auth$ = new ReplaySubject(1);
     this.storage.get('auth').then((auth) => {
+      this.#user = auth.user;
       this.#auth$.next(auth);
     });
   }

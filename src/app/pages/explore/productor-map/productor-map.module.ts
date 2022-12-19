@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ExplorePageRoutingModule } from './explore-routing.module';
+import { ProductorMapPageRoutingModule } from './productor-map-routing.module';
 
-import { ExplorePage } from './explore.page';
-import { ProductorMapPageModule } from './productor-map/productor-map.module';
+import { ProductorMapPage } from './productor-map.page';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 @NgModule({
@@ -15,9 +14,9 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    ExplorePageRoutingModule,
+    ProductorMapPageRoutingModule,
     WidgetsModule,
   ],
-  declarations: [ExplorePage],
+  declarations: [ProductorMapPage],
 })
-export class ExplorePageModule {}
+export class ProductorMapPageModule {}
