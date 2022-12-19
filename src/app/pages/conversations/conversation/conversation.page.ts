@@ -41,6 +41,10 @@ export class ConversationPage implements OnInit {
     this.init();
   }
 
+  goBack() {
+    this.router.navigate(['conversations']);
+  }
+
   // // create conversation 
   // async create() {
   //   const conversation = await this.conversationService.create({

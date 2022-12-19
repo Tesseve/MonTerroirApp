@@ -14,11 +14,11 @@ export class ConversationsPage implements OnInit {
 
   ngOnInit() {
     this.loadConversation(true);
-    this.authService.getToken$().subscribe((token) => {
-      if (token) {
-        console.log('token', token);
-      }
-    });
+    // this.authService.getToken$().subscribe((token) => {
+    //   if (token) {
+    //     console.log('token', token);
+    //   }
+    // });
   }
 
   conversations: Conversation[] = [];

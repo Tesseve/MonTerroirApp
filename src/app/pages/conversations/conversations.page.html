@@ -1,13 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="conversations.page.scss">
+    <title>Messagerie</title>
+</head>
+
+<body>
+</body>
+
 <ion-content>
 
     <ion-refresher slot="fixed" (ionRefresh)="loadConversation(true, $event)">
         <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
 
-    <h1>
-        Messagerie
-    </h1>
-
+    <div class="titre-messagerie">
+        <h1>
+            Messagerie
+        </h1>
+    </div>
+    
     <ion-list>
         <ion-item *ngFor="let conversation of conversations" [routerLink]="['/conversations', conversation._id]">
             <ion-avatar slot="start">
@@ -20,3 +34,6 @@
     </ion-list>
 
 </ion-content>
+
+</html>
+

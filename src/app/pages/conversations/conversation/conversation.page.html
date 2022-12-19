@@ -1,39 +1,47 @@
-<h1>Messagerie</h1>
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="conversation.page.scss" />
+    <title>Messagerie</title>
+</head>
+
+<body>
+</body>
 
 <div *ngIf="conversation">
     
-    <h1>{{ conversation.name }}</h1>
-
-    Messages
-    <div *ngFor="let message of messages">
-        {{ message.message }}
+    <div class="conversation-title">
+        <span class="return">
+            <ion-button (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </span>
+        <span class="avatar">
+            <ion-avatar slot="start">
+                <img src="https://picsum.photos/200/200">
+            </ion-avatar>
+        </span>
+        <span class="conversation-name">
+            <h1>{{ conversation.name }}</h1>
+        </span>
+        <span class="username">
+            <h1>{{ conversation.users[0].username }}</h1>
+        </span>
     </div>
-    
-    <!-- <ion-content>
-        <ion-list>
-            <ion-item *ngFor="let message of conversation.messages">
-                <ion-avatar slot="start">
-                    <img [src]="message.user.avatar">
-                </ion-avatar>
-                <ion-label>
-                    <h2>{{ message.user.name }}</h2>
-                    <p>{{ message.text }}</p>
-                </ion-label>
-            </ion-item>
-        </ion-list>
-    </ion-content> -->
 
-    <!-- <ion-footer>
-        <ion-toolbar>
-            <ion-item>
-                <ion-input placeholder="Message" [(ngModel)]="messageText"></ion-input>
-                <ion-button (click)="sendMessage()">Send</ion-button>
-            </ion-item>
-        </ion-toolbar>
-    </ion-footer> -->
+    <div class="container" *ngFor="let message of messages">
+        <div class="arrow"></div>
+        <div class="message-body">
+            {{ message.message }}
+        </div>
+    </div>
 
     <!-- <ion-content>
 
     </ion-content> -->
 
 </div>
+
+</html>
