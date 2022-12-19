@@ -1,3 +1,12 @@
-<div class="myCardProduct">
-  <p>Coucou je suis une super carte</p>
+<div class="myCardProduct" *ngIf="product">
+  <img
+    *ngIf="product.images.length > 0"
+    width="20px"
+    src="{{ product.images[0].url }}"
+  />
+  <div class="containerNameFavoris">
+    <p>{{ product.name }}</p>
+    <div class="addFavoris"></div>
+  </div>
+  <p>CHF {{ product.price }}</p>
 </div>

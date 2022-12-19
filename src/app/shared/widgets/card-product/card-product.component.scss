@@ -1,3 +1,15 @@
 .myCardProduct{
-    border: solid 1px ;
+    border: solid 1px var(--border-card-grey) ;
+}
+
+.addFavoris{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+.containerNameFavoris {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
