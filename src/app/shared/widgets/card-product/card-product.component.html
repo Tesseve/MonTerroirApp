@@ -1,1 +1,10 @@
-<p>Coucou je suis une super carte</p>
+<div class="myCardProduct" *ngIf="product">
+  <img *ngIf="product.images.length > 0" src="{{ product.images[0].url }}" />
+  <div class="containerNameFavoris">
+    <p>{{ product.name }}</p>
+    <!-- <div class="addFavoris"></div> -->
+    <!-- <ion-icon name="heart"></ion-icon> -->
+  </div>
+  <p>CHF {{ product.price }}</p>
+  <p>Disponible</p>
+</div>

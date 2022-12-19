@@ -1,4 +1,5 @@
 import { Category } from './Category';
+import { Image } from './Image';
 import { Productor } from './Productor';
 
 export type Product = {
@@ -6,7 +7,7 @@ export type Product = {
   name: string;
   description: string;
   price: number;
-  image: string;
+  images: Image[];
   productor: Productor;
   category: Category;
   createdAt: Date;

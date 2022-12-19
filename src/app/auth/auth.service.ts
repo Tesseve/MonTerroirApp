@@ -31,6 +31,10 @@ export class AuthService {
     this.storage.get('auth').then((auth) => {
       this.#auth$.next(auth);
     });
+
+    this.#auth$.subscribe((auth) => {
+      this.#user = auth?.user;
+    });
   }
 
   isAuthenticated$(): Observable<boolean> {
