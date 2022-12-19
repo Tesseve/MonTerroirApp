@@ -18,11 +18,11 @@ export class LayoutPage implements OnInit {
   tabs: PageTab[];
   constructor(private auth: AuthService, private router: Router) {
     this.tabs = [
-      { title: 'Favoris', icon: 'star', path: 'favoris' },
-      { title: 'Explore', icon: 'search', path: 'explore' },
-      { title: 'Accueil', icon: 'home', path: 'home' },
-      { title: 'Messages', icon: 'chatbox-ellipses', path: 'conversations' },
-      { title: 'Profil', icon: 'person', path: 'profil' },
+      // { title: 'Favoris', icon: 'heart', path: 'favoris' },
+       { title: 'Accueil', icon: 'home-sharp', path: 'home' },
+      { title: 'Explore', icon: 'search-sharp', path: 'explore' },
+      { title: 'Messages', icon: 'chatbubble-ellipses-sharp', path: 'conversations' },
+      { title: 'Profil', icon: 'person-circle-sharp', path: 'profil' },
     ];
   }
 
