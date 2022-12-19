@@ -8,13 +8,18 @@ import { StartPageRoutingModule } from './start-routing.module';
 
 import { StartPage } from './start.page';
 
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
+
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StartPageRoutingModule
+    StartPageRoutingModule,
+    WidgetsModule,
   ],
   declarations: [StartPage]
 })
-export class StartPageModule {}
+export class StartPageModule { }
