@@ -21,7 +21,7 @@ export class AppComponent {
       height: window.screen.height * ratio,
     };
 
-    if (iOS && screen.width == 1125 && screen.height === 2436) {
+    if (iOS && screen.width >= 1125 && screen.height >= 2436) {
       console.log('iPhone X detected');
       this.renderer.addClass(document.body, 'is-iphone-x');
     } else {
