@@ -50,3 +50,8 @@
         }
     }
 }
+
+.is-iphone-x .app-bar {
+    //to fix the tab bar on iphone x
+    padding-top: 40px !important;
+}
