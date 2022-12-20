@@ -30,7 +30,8 @@
 @import "~@ionic/angular/css/flex-utils.css";
 .is-iphone-x .tabs-inner {
     //to fix the tab bar on iphone x
-    margin-top: 2.5em;
+    padding-top: 2.5em;
+    padding-bottom: 2em;
 }
 
 .tabs-inner {
