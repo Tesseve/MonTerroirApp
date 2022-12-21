@@ -14,8 +14,33 @@
     background-color: red;
 }
 
-.containerNameFavoris {
+// .containerNameFavoris {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: baseline;
+// }
+
+.flexLove, .flexChat {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    justify-content: baseline;
+}
+
+.flexLove p {
+    width: 120%;
+}
+
+.flexChat p {
+    width: 120%;
+}
+
+.flexLove img,
+.flexChat img {
+    width: 50%;
+    margin-left: 40%;
+    padding-top: 25%;
+}
+
+.nameProduct {
+    font-size: 1.5em;
+    font-weight: 500;
 }
