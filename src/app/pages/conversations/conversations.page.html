@@ -1,18 +1,20 @@
-<ion-refresher slot="fixed" (ionRefresh)="loadConversation(true, $event)">
-    <ion-refresher-content></ion-refresher-content>
-</ion-refresher>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="loadConversation(true, $event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
 
-<div>
-    <app-bar title="Messagerie"></app-bar>
+    <div>
+        <app-bar title="Messagerie"></app-bar>
 
-    <ion-list>
-        <ion-item *ngFor="let conversation of conversations" [routerLink]="['/conversations', conversation._id]">
-            <ion-avatar slot="start">
-                <img src="https://picsum.photos/200/200">
-            </ion-avatar>
-            <ion-label>
-                <h2>{{ conversation.name }}</h2>
-            </ion-label>
-        </ion-item>
-    </ion-list>
-</div>
+        <ion-list>
+            <ion-item *ngFor="let conversation of conversations" [routerLink]="['/conversations', conversation._id]">
+                <ion-avatar slot="start">
+                    <img src="https://picsum.photos/200/200">
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{ conversation.name }}</h2>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

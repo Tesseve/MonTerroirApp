@@ -1,3 +1,12 @@
-<app-bar title="Explorer"></app-bar>
+<div>
+    <app-bar title="Liste des produits"></app-bar>
 
-<ion-button (click)="goToMap()">Map</ion-button>
+    <!-- Search bar -->
+
+    <div class="search-bar">
+        <ion-searchbar class="w-1/2" (ionInput)="search($event)"></ion-searchbar>
+        <ion-button (click)="goToMap()">
+            <ion-icon name="map" style="font-size:x-large"></ion-icon>
+        </ion-button>
+    </div>
+</div>

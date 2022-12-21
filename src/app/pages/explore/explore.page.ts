@@ -14,4 +14,9 @@ export class ExplorePage implements OnInit {
   goToMap() {
     this.navController.navigateForward('explore/map', { animated: false });
   }
+
+  search($event: any) {
+    const text = $event.target.value;
+    console.log(text);
+  }
 }
