@@ -10,4 +10,12 @@
 
 #map {
     height: 100%;
+    z-index: 1;
+}
+
+.button-list {
+    position: absolute;
+    top: 10vh;
+    right: 2vw;
+    z-index: 100;
 }
