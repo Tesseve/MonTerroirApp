@@ -1,6 +1,7 @@
 .myCardProduct{
     border: solid 1px var(--border-card-grey) ;
-    width: 40%;
+    width: 25vw;
+    height: 210px;
     border-radius: 10%;
 }
 
@@ -38,9 +39,12 @@
     width: 50%;
     margin-left: 40%;
     padding-top: 25%;
+    margin-bottom: 0;
 }
 
 .nameProduct {
     font-size: 1.5em;
     font-weight: 500;
+    margin-bottom: 0;
+
 }

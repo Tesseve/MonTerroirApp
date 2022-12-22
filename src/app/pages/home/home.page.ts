@@ -16,6 +16,7 @@ export class HomePage implements OnInit {
   user?: User;
   maDate?: Date;
   products?: Product[];
+ 
 
   constructor(
     private loadingService: LoadingService,

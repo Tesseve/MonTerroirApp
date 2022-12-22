@@ -1,19 +1,25 @@
-<div>
+<ion-content>
   <div id="MyCircleGreen"></div>
   <div class="container">
     <h1>Salut, <span class="myGreenName">{{user?.username}}</span></h1>
     <h2 class="myDate">{{maDate | date:'dd.MM.YY'}}</h2>
 
     <app-local-position-bar></app-local-position-bar>
+
     <div class="SuggestionBar">
       <h3>Nos Suggestion</h3>
-      <div class="sliderSuggestion">
-        <app-card-product
-          *ngFor="let product of products"
-          [product]="product"
-        ></app-card-product>
-      </div>
     </div>
   </div>
+  <div class="sliderSuggestion">
+    <!-- <ion-content [scrollX]="true"> -->
+    <ion-list class="cardFelx">
+      <app-card-product
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-card-product>
+    </ion-list>
+    <!-- </ion-content> -->
+  </div>
+
   <!-- <ion-button (click)="showLoading()">Show loading</ion-button> -->
-</div>
+</ion-content>
