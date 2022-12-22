@@ -1,4 +1,4 @@
-<div>
+<ion-content>
     <app-bar title="Liste des produits"></app-bar>
 
     <!-- Search bar -->
@@ -9,4 +9,12 @@
             <ion-icon name="map" style="font-size:x-large"></ion-icon>
         </ion-button>
     </div>
-</div>
+
+
+    <ion-list>
+        <div *ngFor="let product of [].constructor(100)">
+            <ion-button>{{product}}</ion-button>
+        </div>
+    </ion-list>
+
+</ion-content>
