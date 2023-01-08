@@ -50,6 +50,7 @@
     "@capacitor/cli": "4.6.1",
     "@ionic/angular-toolkit": "^6.0.0",
     "@ionic/cli": "6.20.4",
+    "@ionic/lab": "^3.2.15",
     "@schematics/angular": "^15.0.4",
     "@types/jasmine": "~4.0.0",
     "@types/leaflet": "^1.9.0",

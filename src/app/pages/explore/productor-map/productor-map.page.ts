@@ -1,5 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import * as L from 'leaflet';
+import { PositionService } from 'src/app/shared/services/gps/position.service';
 
 @Component({
   selector: 'app-productor-map',
@@ -11,9 +13,9 @@ export class ProductorMapPage implements AfterViewInit {
 
   swissBounds = L.latLngBounds(L.latLng(45, 5), L.latLng(48, 11));
 
-  private initMap(): void {
+  private initMap({ lat = 46.77529, long = 6.637531 } = {}): void {
     this.map = L.map('map', {
-      center: [46.77529, 6.637531],
+      center: [lat, long],
       zoom: 13,
       maxBoundsViscosity: 1,
     });
@@ -34,9 +36,59 @@ export class ProductorMapPage implements AfterViewInit {
     tiles.addTo(this.map);
   }
 
-  constructor() {}
+  private addMarker(lat: number, lng: number, { icon = 'pin' } = {}): void {
+    const marker = L.marker([lat, lng], {
+      icon: L.icon({
+        iconSize: [30, 30],
+        iconUrl: 'assets/icon/' + icon + '.svg',
+      }),
+    })
+      .addTo(this.map!)
+      .on('click', async () => {
+        const toast = await this.toastController.create({
+          message: 'Marker clicked',
+          duration: 2000,
+          position: 'top',
+        });
+        await toast.present();
+      });
+    console.log(marker);
+  }
+
+  constructor(
+    private positionService: PositionService,
+    private toastController: ToastController
+  ) {}
 
   ngAfterViewInit(): void {
-    this.initMap();
+    this.init();
+  }
+
+  private async init() {
+    const position = await this.positionService.getCurrentPosition();
+    if (!position) {
+      this.initMap();
+      return;
+    }
+    this.initMap({
+      lat: position.coords.latitude,
+      long: position.coords.longitude,
+    });
+    this.addMarker(position.coords.latitude, position.coords.longitude, {
+      icon: 'home',
+    });
+    this.addMarker(
+      position.coords.latitude - 0.01,
+      position.coords.longitude + 0.01
+    );
+    this.addMarker(
+      position.coords.latitude - 0.015,
+      position.coords.longitude - 0.015
+    );
+
+    this.addMarker(
+      position.coords.latitude - 0.02,
+      position.coords.longitude - 0.01
+    );
   }
 }

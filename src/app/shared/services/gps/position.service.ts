@@ -13,11 +13,16 @@ export class PositionService {
 
   async getCurrentPosition() {
     const coordinates = await Geolocation.getCurrentPosition();
+    this.#position = coordinates;
     return coordinates;
   }
 
   watchPosition() {
-    Geolocation.watchPosition({}, (position, err) => {
+    Geolocation.watchPosition({}, (position: Position | null, err: any) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
       this.#position = position;
     });
   }
