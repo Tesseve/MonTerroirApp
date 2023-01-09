@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { ConversationsPageRoutingModule } from './conversations-routing.module';
 
 import { ConversationsPage } from './conversations.page';
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ConversationsPageRoutingModule
+    ConversationsPageRoutingModule,
+    WidgetsModule,
   ],
-  declarations: [ConversationsPage]
+  declarations: [ConversationsPage],
 })
 export class ConversationsPageModule {}

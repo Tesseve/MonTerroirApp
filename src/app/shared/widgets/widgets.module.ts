@@ -5,8 +5,9 @@ import { ButtonLoginComponent } from './button-login/button-login.component';
 import { CardProductComponent } from './card-product/card-product.component';
 import { LocalPositionBarComponent } from './local-position-bar/local-position-bar.component';
 
-
 import { AppBarComponent } from './app-bar/app-bar.component';
+import { IonicModule } from '@ionic/angular';
+import { CardProductorComponent } from './card-productor/card-productor.component';
 
 @NgModule({
   declarations: [
@@ -14,15 +15,17 @@ import { AppBarComponent } from './app-bar/app-bar.component';
     ButtonLoginComponent,
     CardProductComponent,
     LocalPositionBarComponent,
-    AppBarComponent
+    AppBarComponent,
+    CardProductorComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, IonicModule],
   exports: [
     FormInputTextComponent,
     ButtonLoginComponent,
     CardProductComponent,
     LocalPositionBarComponent,
     AppBarComponent,
+    CardProductorComponent,
   ],
 })
 export class WidgetsModule {}

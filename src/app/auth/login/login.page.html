@@ -1,54 +1,15 @@
-<ion-content>
+<div class="content">
+    <img class="myPhotoCircle" src="\assets\imageBaseMonTerroir.png" alt="Terroir avec une caisse des légumes" />
 
-    <div class="content">
-        <img class="myPhotoCircle" src="\assets\imageBaseMonTerroir.png" alt="Terroir avec une caisse des légumes" />
+    <h1>Connexion</h1>
 
-        <h1>Connexion</h1>
-
-    </div>
     <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
-        <ion-list>
+        <app-form-input-text label="Nom" (valueChange)="setUsername($event)"></app-form-input-text>
+        <br>
+        <app-form-input-text label="Mot de passe" (valueChange)="setPassword($event)"></app-form-input-text>
 
-            <app-form-input-text label="Nom" (valueChange)="setUsername($event)"></app-form-input-text>
-            <app-form-input-text label="Mot de passe" (valueChange)="setPassword($event)"></app-form-input-text>
 
-
-            <!-- Username input -->
-            <ion-item>
-                <ion-label position="floating">Username</ion-label>
-                <ion-input inputmode="text" #username="ngModel" required="true" name="username"
-                    [(ngModel)]="authRequest.username"></ion-input>
-            </ion-item>
-
-            <!-- Error message displayed if the username is invalid -->
-            <ion-item lines="none" *ngIf="username.invalid && username.touched">
-                <ion-text color="danger">Username is required.</ion-text>
-            </ion-item>
-
-            <!-- Password input -->
-            <ion-item>
-                <ion-label position="floating">Password</ion-label>
-                <ion-input inputmode="text" #password="ngModel" required="true" type="password" name="password"
-                    [(ngModel)]="authRequest.password"></ion-input>
-            </ion-item>
-
-            <!-- Error message displayed if the password is invalid -->
-            <ion-item lines="none" *ngIf="password.invalid && password.touched">
-                <ion-text color="danger">Password is required.</ion-text>
-            </ion-item>
-        </ion-list>
-
-        <div class="ion-padding">
-            <!-- Submit button -->
-            <ion-button type="submit" expand="block" [disabled]="loginForm.invalid">Se connecter</ion-button>
-
-            <!-- Error message displayed if the login failed -->
-            <ion-text color="danger" *ngIf="loginError">Username or password is invalid.</ion-text>
-        </div>
     </form>
+    <app-button-login label="Connexion" (click)="onSubmit(loginForm)">Connexion</app-button-login>
 
-    <div class="ion-padding">
-        <ion-button (click)="displayRegisterForm()" expand="block">Inscription</ion-button>
-    </div>
-
-</ion-content>
+</div>

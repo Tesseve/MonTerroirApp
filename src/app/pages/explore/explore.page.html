@@ -1,3 +1,20 @@
-<app-bar title="Explorer"></app-bar>
+<ion-content>
+    <app-bar title="Liste des produits"></app-bar>
 
-<button (click)="goToMap()">Map</button>
+    <!-- Search bar -->
+
+    <div class="search-bar">
+        <ion-searchbar class="w-1/2" (ionInput)="search($event)"></ion-searchbar>
+        <ion-button (click)="goToMap()">
+            <ion-icon name="map" style="font-size:x-large"></ion-icon>
+        </ion-button>
+    </div>
+
+
+    <ion-list>
+        <div *ngFor="let productor of productors">
+            <ion-button>{{productor.username}}</ion-button>
+        </div>
+    </ion-list>
+
+</ion-content>

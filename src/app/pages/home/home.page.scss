@@ -11,13 +11,15 @@
     scale: 70;
     z-index: -50;
     position: relative;
-    top: -70%;
+    top: -67%;
     left: 45%;
 }
 
-h1 {
+h1, h3 {
     color: #fff;
 }
+
+
 
 .myDate {
     color: #fff;
@@ -25,4 +27,39 @@ h1 {
 
 .myGreenName {
     color: #36DF8E;
+}
+
+.sliderSuggestion{
+    display: flex;
+    height: 32vh;
+}
+
+.sliderProductor {
+    display: flex;
+    height: 32vh;
+}
+
+.cardFelx {
+    display: flex;
+    overflow-x: scroll;
+}
+
+// .ProductorBar {
+//     background-color: rgba(0, 0, 0, 0);
+// }
+
+.ProductorBar h3 {
+    color: #000;
+}
+
+.cardFelx-achat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+}
+
+.list-ios {
+    background-color: rgba(0, 0, 0, 0);
 }

@@ -9,13 +9,16 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    WidgetsModule
+    WidgetsModule,
+    ScrollingModule
   ],
   declarations: [HomePage]
 })
