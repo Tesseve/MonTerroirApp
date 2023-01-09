@@ -1,0 +1,33 @@
+<div class="testMargin">
+  <div class="myCardProduct" *ngIf="productor">
+    <!-- <img
+      *ngIf="productor.images.length > 0"
+      src="{{ product.images[0].url }}"
+    /> -->
+    <img
+      src="../../../../assets/896-536x354.jpg"
+      alt="monEndroitdeProduction"
+    />
+    <div class="containerNameFavoris">
+      <div class="flexLove">
+        <p class="nameProduct">{{ productor.username }}</p>
+        <a href="#"
+          ><img
+            src="../../../../assets/icon/heart-outline.png"
+            alt="ajouter au favoris"
+        /></a>
+      </div>
+      <!-- <div class="addFavoris"></div> -->
+      <!-- <ion-icon name="heart"></ion-icon> -->
+    </div>
+
+    <div class="flexChat">
+      <p>Ouvert</p>
+      <a href="#"
+        ><img
+          src="../../../../assets/icon/chatbubbles-outline.png"
+          alt="Contacter le producteur"
+      /></a>
+    </div>
+  </div>
+</div>

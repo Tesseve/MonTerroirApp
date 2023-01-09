@@ -7,6 +7,7 @@ import { LocalPositionBarComponent } from './local-position-bar/local-position-b
 
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { IonicModule } from '@ionic/angular';
+import { CardProductorComponent } from './card-productor/card-productor.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { IonicModule } from '@ionic/angular';
     CardProductComponent,
     LocalPositionBarComponent,
     AppBarComponent,
+    CardProductorComponent,
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -23,6 +25,7 @@ import { IonicModule } from '@ionic/angular';
     CardProductComponent,
     LocalPositionBarComponent,
     AppBarComponent,
+    CardProductorComponent,
   ],
 })
 export class WidgetsModule {}
