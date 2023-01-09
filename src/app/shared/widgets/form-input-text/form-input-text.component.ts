@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class FormInputTextComponent implements OnInit {
 
   @Input() label: string = 'Label';
+  @Input() placeholder: string = 'Label';
   @Output() valueChange = new EventEmitter();
 
   constructor() { }

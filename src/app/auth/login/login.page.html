@@ -4,12 +4,13 @@
     <h1>Connexion</h1>
 
     <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
-        <app-form-input-text label="Nom" (valueChange)="setUsername($event)"></app-form-input-text>
+        <app-form-input-text label="Nom d'utilisateur" (valueChange)="setUsername($event)"
+            placeholder=""></app-form-input-text>
         <br>
-        <app-form-input-text label="Mot de passe" (valueChange)="setPassword($event)"></app-form-input-text>
-
-
+        <app-form-input-text label="Mot de passe" (valueChange)="setPassword($event)"
+            placeholder=""></app-form-input-text>
     </form>
-    <app-button-login label="Connexion" (click)="onSubmit(loginForm)">Connexion</app-button-login>
+    <app-button-login class="buttonConnexion" label="Connexion"
+        (click)="onSubmit(loginForm)">Connexion</app-button-login>
 
 </div>

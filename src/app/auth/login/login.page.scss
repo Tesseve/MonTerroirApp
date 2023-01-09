@@ -5,8 +5,9 @@ div.content {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    //justify-content: space-between;
     padding-top: 25vh;
+
 }
 
 .myPhotoCircle {
@@ -25,4 +26,12 @@ h1 {
     padding-top: 5%;
     font-size: 48px;
     font-weight: 800;
+}
+
+.buttonConnexion {
+    position: absolute;
+    bottom: 30px;
+    margin-left: 15%;
+    left: 0;
+    right: 0;
 }
