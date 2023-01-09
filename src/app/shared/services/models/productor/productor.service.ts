@@ -32,6 +32,11 @@ export class ProductorService {
     return this.getAllNearby({ forceFetchio, location: '', distance: 0 });
   }
 
+  async getAllBySearch(text: string): Promise<Productor[]> {
+    const productors = await this.http.get(`productors/search/${text}`);
+    return productors;
+  }
+
   async get(id: number, { forceFetchio = false } = {}) {
     let productor: Productor | undefined = this.productors.find(
       (productor) => productor.id === id

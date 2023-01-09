@@ -39,8 +39,10 @@ export class ExplorePage implements OnInit {
     this.navController.navigateForward('explore/map', { animated: false });
   }
 
-  search($event: any) {
+  async search($event: any) {
     const text = $event.target.value;
     console.log(text);
+
+    this.productors = await this.productorService.getAllBySearch(text);
   }
 }
