@@ -10,13 +10,26 @@ export class ProductorService {
 
   productors: Productor[] = [];
 
-  async getAll({ forceFetchio = false } = {}) {
+  async getAllNearby({
+    forceFetchio = false,
+    location = '',
+    distance = 3000,
+  } = {}) {
     if (this.productors.length && !forceFetchio) {
       return this.productors;
     }
-    const productors = await this.http.get('productors');
+    let query = '';
+    if (location && distance > 0) {
+      query = `?location=${location}&distance=${distance}`;
+    }
+    const url = 'productors' + query;
+    const productors = await this.http.get(url);
     this.productors = productors;
     return productors;
+  }
+
+  async getAll({ forceFetchio = false } = {}) {
+    return this.getAllNearby({ forceFetchio, location: '', distance: 0 });
   }
 
   async get(id: number, { forceFetchio = false } = {}) {
