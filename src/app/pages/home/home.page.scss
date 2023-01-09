@@ -11,7 +11,7 @@
     scale: 70;
     z-index: -50;
     position: relative;
-    top: -70%;
+    top: -67%;
     left: 45%;
 }
 
@@ -44,6 +44,10 @@ h1, h3 {
     overflow-x: scroll;
 }
 
+// .ProductorBar {
+//     background-color: rgba(0, 0, 0, 0);
+// }
+
 .ProductorBar h3 {
     color: #000;
 }
@@ -56,3 +60,6 @@ h1, h3 {
     justify-content: space-evenly;
 }
 
+.list-ios {
+    background-color: rgba(0, 0, 0, 0);
+}
