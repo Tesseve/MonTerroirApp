@@ -13,6 +13,7 @@ import { LoadingService } from 'src/app/shared/services/loading/loading.service'
  */
 @Component({
   templateUrl: 'login.page.html',
+  styleUrls: ['./login.page.scss']
 })
 export class LoginPage {
   authRequest: AuthRequest;
