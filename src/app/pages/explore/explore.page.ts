@@ -45,4 +45,10 @@ export class ExplorePage implements OnInit {
 
     this.productors = await this.productorService.getAllBySearch(text);
   }
+
+  goToProductor(productor: Productor) {
+    this.navController.navigateForward(`productor/${productor.id}`, {
+      animated: false,
+    });
+  }
 }

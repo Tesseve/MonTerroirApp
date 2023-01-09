@@ -12,8 +12,8 @@
 
 
     <ion-list>
-        <div *ngFor="let productor of productors">
-            <ion-button>{{productor.username}}</ion-button>
+        <div class="productor-list">
+            <app-card-productor *ngFor="let productor of productors" [productor]="productor" (click)="goToProductor(productor)" class="productor-item"></app-card-productor>
         </div>
     </ion-list>
 

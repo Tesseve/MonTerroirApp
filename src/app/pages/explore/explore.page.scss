@@ -1,3 +1,16 @@
 .search-bar {
     display: flex;
 }
+
+.productor-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.productor-item {
+    flex: 1;
+}
