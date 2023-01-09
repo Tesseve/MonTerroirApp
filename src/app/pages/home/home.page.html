@@ -20,6 +20,31 @@
     </ion-list>
     <!-- </ion-content> -->
   </div>
+  <div class="container">
+    <div class="ProductorBar">
+      <h3>Vendeur de la région</h3>
+    </div>
+  </div>
+  <div class="sliderProductor">
+    <ion-list class="cardFelx">
+      <app-card-product
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-card-product>
+    </ion-list>
+  </div>
+  <div class="container">
+    <div class="ProductorBar">
+      <h3>Mes Achats</h3>
+    </div>
+  </div>
+  <ion-list class="cardFelx-achat">
+    <app-card-product
+      class="mesAchatsHome"
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-card-product>
+  </ion-list>
 
   <!-- <ion-button (click)="showLoading()">Show loading</ion-button> -->
 </ion-content>

@@ -31,10 +31,28 @@ h1, h3 {
 
 .sliderSuggestion{
     display: flex;
+    height: 32vh;
 }
 
+.sliderProductor {
+    display: flex;
+    height: 32vh;
+}
 
 .cardFelx {
     display: flex;
     overflow-x: scroll;
 }
+
+.ProductorBar h3 {
+    color: #000;
+}
+
+.cardFelx-achat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+}
+
