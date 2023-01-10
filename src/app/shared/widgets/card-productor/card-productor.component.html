@@ -1,21 +1,23 @@
 <div class="testMargin">
   <div class="myCardProduct" *ngIf="productor">
-    <!-- <img
-      *ngIf="productor.images.length > 0"
-      src="{{ product.images[0].url }}"
-    /> -->
     <img
+      *ngIf="productor.images.length > 0"
+      src="{{ productor.images[0].url }}"
+    />
+    <!-- <img
       src="../../../../assets/896-536x354.jpg"
       alt="monEndroitdeProduction"
-    />
+    /> -->
     <div class="containerNameFavoris">
       <div class="flexLove">
         <p class="nameProduct">{{ productor.username }}</p>
-        <a href="#"
-          ><img
+        <a href="#">
+          <div class="myFavorisHearts"></div>
+          <!-- <img
             src="../../../../assets/icon/heart-outline.png"
             alt="ajouter au favoris"
-        /></a>
+        /> -->
+        </a>
       </div>
       <!-- <div class="addFavoris"></div> -->
       <!-- <ion-icon name="heart"></ion-icon> -->

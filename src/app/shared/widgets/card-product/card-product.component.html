@@ -1,6 +1,10 @@
 <div class="testMargin myBackgroundCard">
   <div class="myCardProduct" *ngIf="product">
-    <img *ngIf="product.images.length > 0" src="{{ product.images[0].url }}" />
+    <img
+      class="imgProduct"
+      *ngIf="product.images.length > 0"
+      src="{{ product.images[0].url }}"
+    />
     <div class="containerNameFavoris">
       <p class="nameProduct">{{ product.name }}</p>
       <!-- <div class="addFavoris"></div> -->

@@ -46,3 +46,30 @@ body {
 .leaflet-control-container {
     display: none;
 }
+
+/* SCROLLING BAR /*
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0) var(--bg-green-bar);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 0.5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 20px;
+    margin: 3px 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--bg-green-bar);
+    border-radius: 20px;
+    border: 5px solid #fff;
+}
+
+/* END SCROLLING BAR */
