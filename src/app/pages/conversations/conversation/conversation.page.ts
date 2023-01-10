@@ -33,8 +33,11 @@ export class ConversationPage implements OnInit {
     }
 
     this.conversation = conversation;
-    this.messages = await this.conversationService.getAllMessages(conversation!._id);
-    console.log('messages',this.messages);
+    this.messages = await this.conversationService.getAllMessages(
+      conversation!._id
+    );
+    this.messages = this.messages.reverse();
+    console.log('messages', this.messages);
   }
 
   ngOnInit() {
@@ -45,7 +48,7 @@ export class ConversationPage implements OnInit {
     this.router.navigate(['conversations']);
   }
 
-  // // create conversation 
+  // // create conversation
   // async create() {
   //   const conversation = await this.conversationService.create({
   //     name: 'test',
@@ -78,4 +81,20 @@ export class ConversationPage implements OnInit {
   //   }
   // }
 
+  async send(event: Event) {
+    if (!this.conversation) return;
+    const target = event.target as HTMLInputElement;
+    const message = target.value;
+    console.log(message);
+
+    const newMessage = await this.conversationService.sendMessage(
+      this.conversation,
+      message
+    );
+    console.log(newMessage);
+    if (newMessage) {
+      this.messages.push(newMessage);
+      target.value = '';
+    }
+  }
 }

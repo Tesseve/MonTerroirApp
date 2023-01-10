@@ -17,7 +17,6 @@
 // .conversation-title .return {
 //     color: #fff;
 // }
-
 // MESSAGES 
 .container {
     clear: both;
@@ -25,18 +24,57 @@
 }
 
 // Triangles à droite
-.container .arrow {
+
+/* .container .arrow {
     width: 15px;
     height: 20px;
     overflow: hidden;
     position: relative;
-    float: right;
     top: 12px;
     right: 15px;
-
     border-left: 20px solid #0B9778;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
+} */
+
+.container.mine .message-body {
+    float: right;
+    background-color: #0B9778;
+}
+
+.container.mine .arrow {
+    float: right;
+    width: 15px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    top: 12px;
+    right: 15px;
+    border-left: 20px solid #0B9778;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.container.not-mine .arrow {
+    float: left;
+    width: 15px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    top: 12px;
+    left: 15px;
+    border-right: 20px solid #c3c3c3;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.container.not-mine .message-body {
+    float: left;
+    background-color: #c3c3c3;
+}
+
+.container.not-mine .arrow {
+    float: left;
 }
 
 // Contenu messages
@@ -44,7 +82,6 @@
     font: 'Noto Sans';
     font-size: 14px;
     color: #fff;
-    background-color: #0B9778;
     margin: 10px;
     padding: 20px;
     width: 50%;
@@ -63,18 +100,23 @@
     bottom: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+}
+
+.form {
+    width: 80vw;
 }
 
 #input {
     width: 100%;
     height: 40px;
     // position: relative;
-    color: #989C92;
+    color: #000000;
     background-color: #E3E3E3;
     border: none;
     border-radius: 10px;
     margin: 5px;
+    padding: 10px;
 }
 
 .icon {
@@ -87,4 +129,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 12vw;
 }

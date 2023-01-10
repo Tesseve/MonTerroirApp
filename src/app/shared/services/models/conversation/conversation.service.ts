@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Conversation } from 'src/app/models/Conversation';
 import { HttpService } from '../../http/http.service';
+import { Message } from 'src/app/models/Message';
 
 @Injectable({
   providedIn: 'root',
@@ -60,9 +61,17 @@ export class ConversationService {
     );
   }
 
-  async getAllMessages(id:number): Promise<any>{
+  async getAllMessages(id: number): Promise<any> {
     const messages = await this.http.get(`conversations/${id}/messages`);
     return messages.data;
   }
 
+  async sendMessage(conversation: Conversation, message: string) {
+    const newMessage = await this.http.post(
+      `conversations/${conversation._id}/messages`,
+      { content: message }
+    );
+
+    return newMessage as Message;
+  }
 }

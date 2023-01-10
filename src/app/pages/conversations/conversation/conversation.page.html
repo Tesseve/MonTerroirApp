@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr-CH">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
 </body>
 
 <div *ngIf="conversation">
-    
+
     <div class="conversation-title">
         <span class="return">
             <ion-button (click)="goBack()">
@@ -33,7 +34,7 @@
         </span>
     </div>
 
-    <div class="container" *ngFor="let message of messages">
+    <div class="container" [ngClass]="{'mine': message.mine, 'not-mine' : !message.mine}" *ngFor="let message of messages">
         <div class="arrow"></div>
         <div class="message-body">
             {{ message.message }}
@@ -42,7 +43,7 @@
 
     <div class="message-input">
         <form class="form">
-            <input type="text" id="input" name="message" placeholder="Message" oninput="f()">
+            <input type="text" id="input" name="message" placeholder="Message" (change)="send($event)">
             <span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
         </form>
     </div>
