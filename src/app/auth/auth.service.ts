@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ReplaySubject, Observable, from } from 'rxjs';
+import { from, Observable, ReplaySubject } from 'rxjs';
 import { delayWhen, map } from 'rxjs/operators';
 
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
+import { environment } from 'src/environments/environment';
+import { AuthRegisterRequest } from '../models/AuthRegisterRequest';
+import { AuthRequest } from '../models/AuthRequest';
 import { AuthResponse } from '../models/AuthResponse';
 import { User } from '../models/User';
-import { AuthRequest } from '../models/AuthRequest';
-import { AuthRegisterRequest } from '../models/AuthRegisterRequest';
-import { environment } from 'src/environments/environment';
-import { Storage } from '@ionic/storage-angular';
-import { Router } from '@angular/router';
 
 const API_URL = environment.apiURL;
 
@@ -21,6 +21,7 @@ export class AuthService {
   #auth$: ReplaySubject<AuthResponse | undefined>;
 
   #user: User | undefined;
+  #token: string | undefined;
 
   constructor(
     private http: HttpClient,
@@ -34,6 +35,7 @@ export class AuthService {
 
     this.#auth$.subscribe((auth) => {
       this.#user = auth?.user;
+      this.#token = auth?.accessToken;
     });
   }
 
@@ -49,6 +51,10 @@ export class AuthService {
     return this.#auth$.pipe(map((auth) => auth?.accessToken));
   }
 
+  getToken(): string | undefined {
+    return this.#token;
+  }
+
   logIn$(authRequest: AuthRequest): Observable<User> {
     const authUrl = `${API_URL}auth/login`;
     return this.http.post<AuthResponse>(authUrl, authRequest).pipe(
@@ -58,6 +64,7 @@ export class AuthService {
       map((auth) => {
         this.#auth$.next(auth);
         this.#user = auth.user;
+        this.#token = auth.accessToken;
         return auth.user;
       })
     );
@@ -73,6 +80,7 @@ export class AuthService {
         console.log(auth);
         this.#auth$.next(auth);
         this.#user = auth.user;
+        this.#token = auth.accessToken;
         return auth.user;
       })
     );

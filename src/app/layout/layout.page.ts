@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
+import { WebsocketService } from '../shared/services/websocket.service';
 
 declare type PageTab = {
   title: string; // The title of the tab in the tab bar
@@ -13,10 +14,15 @@ declare type PageTab = {
   templateUrl: './layout.page.html',
   styleUrls: ['./layout.page.scss'],
 })
-export class LayoutPage implements OnInit {
+export class LayoutPage implements OnInit, OnDestroy {
   title = 'Mon terroir';
   tabs: PageTab[];
-  constructor(private auth: AuthService, private router: Router) {
+
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private WebsocketService: WebsocketService
+  ) {
     this.tabs = [
       { title: 'Accueil', icon: 'home-sharp', path: 'home' },
       { title: 'Explore', icon: 'search-sharp', path: 'explore' },
@@ -30,4 +36,6 @@ export class LayoutPage implements OnInit {
   }
 
   ngOnInit() {}
+
+  ngOnDestroy() {}
 }

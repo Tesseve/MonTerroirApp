@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Conversation } from 'src/app/models/Conversation';
 import { Message } from 'src/app/models/Message';
 import { ConversationService } from 'src/app/shared/services/models/conversation/conversation.service';
+import { WebsocketService } from 'src/app/shared/services/websocket.service';
 
 @Component({
   selector: 'app-conversation',
@@ -14,10 +16,13 @@ export class ConversationPage implements OnInit {
 
   messages: Message[] = [];
 
+  websocketSubscription?: Subscription;
+
   constructor(
     private route: ActivatedRoute,
     private conversationService: ConversationService,
-    private router: Router
+    private router: Router,
+    private websocketService: WebsocketService
   ) {
     this.conversation = undefined;
   }
@@ -42,6 +47,16 @@ export class ConversationPage implements OnInit {
 
   ngOnInit() {
     this.init();
+    this.websocketSubscription = this.websocketService.newMessage$.subscribe(
+      (message) => {
+        console.log('new message WEBSOCKET', message);
+        this.messages.push(message);
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    this.websocketSubscription?.unsubscribe();
   }
 
   goBack() {
