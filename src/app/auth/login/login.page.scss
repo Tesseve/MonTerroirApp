@@ -29,8 +29,9 @@ h1 {
 }
 
 .buttonConnexion {
-    position: absolute;
-    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
     margin-left: 15%;
     left: 0;
     right: 0;
