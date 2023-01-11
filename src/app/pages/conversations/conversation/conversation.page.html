@@ -34,10 +34,12 @@
         </span>
     </div>
 
-    <div class="container" [ngClass]="{'mine': message.mine, 'not-mine' : !message.mine}" *ngFor="let message of messages">
-        <div class="arrow"></div>
-        <div class="message-body">
-            {{ message.message }}
+    <div class="conversation-container" id="conversation">
+        <div class="container" [ngClass]="{'mine': message.mine, 'not-mine' : !message.mine}" *ngFor="let message of messages">
+            <div class="arrow"></div>
+            <div class="message-body">
+                {{ message.message }}
+            </div>
         </div>
     </div>
 

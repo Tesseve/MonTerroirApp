@@ -23,6 +23,13 @@
     position: relative;
 }
 
+.conversation-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 60vh;
+}
+
 // Triangles à droite
 
 /* .container .arrow {

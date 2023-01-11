@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Conversation } from 'src/app/models/Conversation';
@@ -22,7 +22,8 @@ export class ConversationPage implements OnInit {
     private route: ActivatedRoute,
     private conversationService: ConversationService,
     private router: Router,
-    private websocketService: WebsocketService
+    private websocketService: WebsocketService,
+    private render: Renderer2
   ) {
     this.conversation = undefined;
   }
@@ -41,7 +42,7 @@ export class ConversationPage implements OnInit {
     this.messages = await this.conversationService.getAllMessages(
       conversation!._id
     );
-    this.messages = this.messages.reverse();
+    this.messages = this.messages;
     console.log('messages', this.messages);
   }
 
@@ -50,7 +51,7 @@ export class ConversationPage implements OnInit {
     this.websocketSubscription = this.websocketService.newMessage$.subscribe(
       (message) => {
         console.log('new message WEBSOCKET', message);
-        this.messages.push(message);
+        this.messages.unshift(message);
       }
     );
   }
@@ -108,7 +109,7 @@ export class ConversationPage implements OnInit {
     );
     console.log(newMessage);
     if (newMessage) {
-      this.messages.push(newMessage);
+      this.messages.unshift(newMessage);
       target.value = '';
     }
   }
