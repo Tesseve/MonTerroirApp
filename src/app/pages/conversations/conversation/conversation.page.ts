@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Conversation } from 'src/app/models/Conversation';
@@ -13,6 +13,7 @@ import { WebsocketService } from 'src/app/shared/services/websocket.service';
 })
 export class ConversationPage implements OnInit {
   conversation?: Conversation;
+  isVisible = true;
 
   messages: Message[] = [];
 
@@ -23,7 +24,8 @@ export class ConversationPage implements OnInit {
     private conversationService: ConversationService,
     private router: Router,
     private websocketService: WebsocketService,
-    private render: Renderer2
+    private render: Renderer2,
+    private changeDetectorRef: ChangeDetectorRef
   ) {
     this.conversation = undefined;
   }
@@ -51,7 +53,7 @@ export class ConversationPage implements OnInit {
     this.websocketSubscription = this.websocketService.newMessage$.subscribe(
       (message) => {
         console.log('new message WEBSOCKET', message);
-        this.messages.unshift(message);
+        this.insertMessage(message);
       }
     );
   }
@@ -109,8 +111,20 @@ export class ConversationPage implements OnInit {
     );
     console.log(newMessage);
     if (newMessage) {
-      this.messages.unshift(newMessage);
+      this.insertMessage(newMessage);
       target.value = '';
     }
+  }
+
+  public rerender(): void {
+    //to force the table to rerender
+    this.isVisible = false;
+    this.changeDetectorRef.detectChanges();
+    this.isVisible = true;
+  }
+
+  private insertMessage(message: Message) {
+    this.messages.unshift(message);
+    this.rerender();
   }
 }
