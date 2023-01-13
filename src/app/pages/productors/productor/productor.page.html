@@ -21,4 +21,8 @@
         </div>
     </div>
 
+    <ion-list class="cardFelx-achat">
+        <app-card-product class="mesAchatsHome" *ngFor="let product of productor.product" [product]="product"></app-card-product>
+    </ion-list>
+
 </ion-content>

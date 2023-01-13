@@ -1,4 +1,5 @@
 import { Image } from './Image';
+import { Product } from './Product';
 
 export type Productor = {
   _id: string;
@@ -8,4 +9,6 @@ export type Productor = {
     type: string;
     coordinates: number[];
   };
+
+  product: Product[];
 };
