@@ -10,5 +10,5 @@ export type Productor = {
     coordinates: number[];
   };
 
-  product: Product[];
+  products: Product[];
 };
