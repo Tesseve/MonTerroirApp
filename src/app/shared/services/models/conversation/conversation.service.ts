@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/auth/auth.service';
   providedIn: 'root',
 })
 export class ConversationService {
-  constructor(private http: HttpService, private authService: AuthService) {}
+  constructor(private http: HttpService) {}
 
   conversations: Conversation[] = [];
 
@@ -81,9 +81,6 @@ export class ConversationService {
   }
 
   async initialize(productor: Productor): Promise<Conversation | undefined> {
-    const user = this.authService.getUser();
-    if (!user) return;
-
     const creatingConversation: ConversationCreating = {
       name: productor.username,
       users: [productor._id],
