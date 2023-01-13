@@ -1,0 +1,22 @@
+.header-image {
+    width: 100vw;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-button {
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2rem;
+    color: #000;
+}

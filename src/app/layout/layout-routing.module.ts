@@ -50,6 +50,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'productors',
+        loadChildren: () =>
+          import('../pages/productors/productors.module').then(
+            (m) => m.ProductorsPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

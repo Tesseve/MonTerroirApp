@@ -1,7 +1,7 @@
 import { Image } from './Image';
 
 export type Productor = {
-  id: number;
+  _id: string;
   username: string;
   images: Image[];
   location: {

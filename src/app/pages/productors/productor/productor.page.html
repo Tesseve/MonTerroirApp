@@ -1,0 +1,24 @@
+<ion-content *ngIf="productor">
+    <app-bar [title]="productor.username"></app-bar>
+
+    <img [src]="productor.images[0].url" alt="productor.username" class="header-image" />
+
+    <div class="flex">
+        <div class="flex-1">
+            <h1>{{ productor.username }}</h1>
+            <h2>{{ productor.username }}</h2>
+            <h3>{{ productor.username }}</h3>
+        </div>
+        <div class="flex-1">
+            <h2>Map</h2>
+
+            <div class="contact-button" (click)="contact()">
+                <div>
+                    Contact
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</ion-content>
