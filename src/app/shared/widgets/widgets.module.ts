@@ -9,6 +9,7 @@ import { AppBarComponent } from './app-bar/app-bar.component';
 import { IonicModule } from '@ionic/angular';
 import { CardProductorComponent } from './card-productor/card-productor.component';
 import { ReviewItemComponent } from './review-item/review-item.component';
+import { FiltreProductComponent } from './filtre-product/filtre-product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ReviewItemComponent } from './review-item/review-item.component';
     AppBarComponent,
     CardProductorComponent,
     ReviewItemComponent,
+    FiltreProductComponent,
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -29,6 +31,7 @@ import { ReviewItemComponent } from './review-item/review-item.component';
     AppBarComponent,
     CardProductorComponent,
     ReviewItemComponent,
+    FiltreProductComponent,
   ],
 })
 export class WidgetsModule {}
