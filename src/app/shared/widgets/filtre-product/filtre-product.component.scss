@@ -1,0 +1,162 @@
+.myCardFiltre {
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 0 3% 5% 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    border-radius: 12px;
+}
+
+.myCardFiltre a {
+    text-decoration: none;
+    color: #989C92;
+}
+
+.filtreActive {
+    color: var(--ion-color-primary);
+}
+
+
+
+.fruit {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.imgFruit {
+    background-image: url(../../../../../src/assets/icon/filtre/fruit.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.imgFruit.filtreActive {
+    background-image: url(../../../../../src/assets/icon/filtre/fruit-select.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.legume {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.imgLegume {
+    background-image: url(../../../../../src/assets/icon/filtre/legume.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.imgLegume.filtreActive {
+    background-image: url(../../../../../src/assets/icon/filtre/legume-select.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.viande {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.imgViande {
+    background-image: url(../../../../../src/assets/icon/filtre/viande.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.imgViande.filtreActive {
+    background-image: url(../../../../../src/assets/icon/filtre/viande-select.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.melasse {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.imgMelasse {
+    background-image: url(../../../../../src/assets/icon/filtre/melasse.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 110%;
+    width: 50px;
+    height: 50px;
+}
+
+.imgMelasse.filtreActive {
+    background-image: url(../../../../../src/assets/icon/filtre/melasse-select.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 110%;
+    width: 50px;
+    height: 50px;
+}
+
+.boisson {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.imgBoisson {
+    background-image: url(../../../../../src/assets/icon/filtre/boisson.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.imgBoisson.filtreActive {
+    background-image: url(../../../../../src/assets/icon/filtre/boisson-select.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.autre {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.imgAutre {
+    background-image: url(../../../../../src/assets/icon/filtre/autre.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+
+.imgAutre.filtreActive {
+    background-image: url(../../../../../src/assets/icon/filtre/autre-select.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+}
+

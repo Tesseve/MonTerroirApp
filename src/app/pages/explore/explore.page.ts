@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Productor } from 'src/app/models/Productor';
+import { Product } from 'src/app/models/Product';
+import { ProductService } from 'src/app/shared/services/models/product/product.service';
 import { PositionService } from 'src/app/shared/services/gps/position.service';
 import { ProductorService } from 'src/app/shared/services/models/productor/productor.service';
 
@@ -10,29 +12,28 @@ import { ProductorService } from 'src/app/shared/services/models/productor/produ
   styleUrls: ['./explore.page.scss'],
 })
 export class ExplorePage implements OnInit {
-  productors: Productor[] = [];
+  
+    products?: Product[];
 
   constructor(
     private navController: NavController,
-    private productorService: ProductorService,
-    private positionService: PositionService
+  
+    private productService: ProductService,
   ) {}
 
   ngOnInit() {
     this.init();
+    
   }
 
   private async init() {
-    const position = await this.positionService.getCurrentPosition();
-
-    let location = undefined;
-    if (position) {
-      location = `${position.coords.latitude},${position.coords.longitude}`;
-    }
-
-    this.productors = await this.productorService.getAll({
-      forceFetchio: true,
+    this.products = await this.productService.getAll({
+      forceFetchio: true
     });
+
+    
+
+   
   }
 
   goToMap() {
@@ -43,12 +44,16 @@ export class ExplorePage implements OnInit {
     const text = $event.target.value;
     console.log(text);
 
-    this.productors = await this.productorService.getAllBySearch(text);
   }
 
   goToProductor(productor: Productor) {
     this.navController.navigateForward(`productors/${productor._id}`, {
       animated: false,
     });
+  }
+
+  getCat(){
+    this.productService.getByCategory('légumes');
+    
   }
 }
