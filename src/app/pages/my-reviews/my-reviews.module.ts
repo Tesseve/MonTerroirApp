@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { MyReviewsPageRoutingModule } from './my-reviews-routing.module';
 
 import { MyReviewsPage } from './my-reviews.page';
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MyReviewsPageRoutingModule
+    MyReviewsPageRoutingModule,
+    WidgetsModule,
   ],
-  declarations: [MyReviewsPage]
+  declarations: [MyReviewsPage],
 })
 export class MyReviewsPageModule {}
