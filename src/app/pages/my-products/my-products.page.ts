@@ -30,4 +30,8 @@ export class MyProductsPage implements OnInit {
   search($event: Event) {
     throw new Error('Method not implemented.');
   }
+
+  goToCreateProduct() {
+    this.router.navigate(['products', 'create']);
+  }
 }

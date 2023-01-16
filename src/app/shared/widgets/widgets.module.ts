@@ -10,6 +10,7 @@ import { IonicModule } from '@ionic/angular';
 import { CardProductorComponent } from './card-productor/card-productor.component';
 import { ReviewItemComponent } from './review-item/review-item.component';
 import { FiltreProductComponent } from './filtre-product/filtre-product.component';
+import { FormProductComponent } from './forms/form-product/form-product.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FiltreProductComponent } from './filtre-product/filtre-product.componen
     CardProductorComponent,
     ReviewItemComponent,
     FiltreProductComponent,
+    FormProductComponent,
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -32,6 +34,7 @@ import { FiltreProductComponent } from './filtre-product/filtre-product.componen
     CardProductorComponent,
     ReviewItemComponent,
     FiltreProductComponent,
+    FormProductComponent,
   ],
 })
 export class WidgetsModule {}
