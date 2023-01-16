@@ -1,28 +1,36 @@
 <div class="testMargin" (click)="goToProductor()">
-    <div class="myCardProduct" *ngIf="productor">
-        <img *ngIf="productor.images.length > 0" src="{{ productor.images[0].url }}" />
-        <!-- <img
+  <div class="myCardProduct" *ngIf="productor">
+    <img
+      class="imgProductor"
+      *ngIf="productor.images.length > 0"
+      src="{{ productor.images[0].url }}"
+    />
+    <!-- <img
       src="../../../../assets/896-536x354.jpg"
       alt="monEndroitdeProduction"
     /> -->
-        <div class="containerNameFavoris">
-            <div class="flexLove">
-                <p class="nameProduct">{{ productor.username }}</p>
-                <a href="#">
-                    <div class="myFavorisHearts"></div>
-                    <!-- <img
+    <div class="containerNameFavoris">
+      <div class="flexLove">
+        <p class="nameProduct">{{ productor.username }}</p>
+        <a href="#">
+          <div class="myFavorisHearts"></div>
+          <!-- <img
             src="../../../../assets/icon/heart-outline.png"
             alt="ajouter au favoris"
         /> -->
-                </a>
-            </div>
-            <!-- <div class="addFavoris"></div> -->
-            <!-- <ion-icon name="heart"></ion-icon> -->
-        </div>
-
-        <div class="flexChat">
-            <p>Ouvert</p>
-            <a><img src="../../../../assets/icon/chatbubbles-outline.png" alt="Contacter le producteur" /></a>
-        </div>
+        </a>
+      </div>
+      <!-- <div class="addFavoris"></div> -->
+      <!-- <ion-icon name="heart"></ion-icon> -->
     </div>
+
+    <div class="flexChat">
+      <p>Ouvert</p>
+      <a
+        ><img
+          src="../../../../assets/icon/chatbubbles-outline.png"
+          alt="Contacter le producteur"
+      /></a>
+    </div>
+  </div>
 </div>

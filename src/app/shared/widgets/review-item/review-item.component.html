@@ -1,0 +1,13 @@
+<div class="review-container" *ngIf="review">
+    <div class="header">
+        <div class="review-author">
+            {{ review.author.username }}
+        </div>
+        <div class="review-rating">
+            {{ review.score }}
+        </div>
+    </div>
+    <div class="review-content">
+        {{ review.message }}
+    </div>
+</div>

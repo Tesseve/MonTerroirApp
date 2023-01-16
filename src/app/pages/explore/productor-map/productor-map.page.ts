@@ -3,6 +3,7 @@ import { NavController, ToastController } from '@ionic/angular';
 import * as L from 'leaflet';
 import { Productor } from 'src/app/models/Productor';
 import { PositionService } from 'src/app/shared/services/gps/position.service';
+import { LoadingService } from 'src/app/shared/services/loading/loading.service';
 import { ProductorService } from 'src/app/shared/services/models/productor/productor.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class ProductorMapPage implements AfterViewInit {
   constructor(
     private positionService: PositionService,
     private navController: NavController,
-    private productorService: ProductorService
+    private productorService: ProductorService,
+    private loadingService: LoadingService
   ) {}
 
   ngAfterViewInit(): void {
@@ -169,11 +171,16 @@ export class ProductorMapPage implements AfterViewInit {
   }
 
   private async loadProductors({ lat = 0, long = 0 } = {}) {
-    return await this.productorService.getAllNearby({
+    this.loadingService.forceHidingLoader();
+
+    const res = await this.productorService.getAllNearby({
       location: `${lat},${long}`,
       distance: this.distanceToFetchProductor,
       forceFetchio: true,
     });
+
+    this.loadingService.forceDisplayingLoader();
+    return res;
   }
 
   private addProductorsOnMap(productors: Productor[]) {

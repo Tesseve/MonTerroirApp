@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { User } from 'src/app/models/User';
 
@@ -9,13 +10,18 @@ import { User } from 'src/app/models/User';
 })
 export class ProfilPage implements OnInit {
   user: User | undefined;
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.user = this.authService.getUser();
+    console.log(this.user);
   }
 
   logout() {
     this.authService.logout();
+  }
+
+  goTo(route: string) {
+    this.router.navigate([route]);
   }
 }
