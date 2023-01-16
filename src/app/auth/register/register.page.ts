@@ -62,7 +62,24 @@ export class RegisterPage {
     });
   }
 
+  goTo(path: string) {
+    this.nav.navigateForward(path, { animated: false });
+  }
+
   displayLoginForm() {
     this.nav.navigateForward('/login', { animated: false });
+  }
+
+  setUsername(username: string) {
+    this.authRequest.username = username;
+  }
+
+  setPassword(password: string) {
+    this.authRequest.password = password;
+  }
+
+  setRole(role: string) {
+    console.log('role changed', role);
+    this.authRequest.role = role;
   }
 }

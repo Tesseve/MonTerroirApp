@@ -4,6 +4,7 @@ import { FormInputTextComponent } from './form-input-text/form-input-text.compon
 import { ButtonLoginComponent } from './button-login/button-login.component';
 import { CardProductComponent } from './card-product/card-product.component';
 import { LocalPositionBarComponent } from './local-position-bar/local-position-bar.component';
+import { FormSwitchComponent } from './form-switch/form-switch.component';
 
 import { AppBarComponent } from './app-bar/app-bar.component';
 import { IonicModule } from '@ionic/angular';
@@ -19,6 +20,7 @@ import { ReviewItemComponent } from './review-item/review-item.component';
     AppBarComponent,
     CardProductorComponent,
     ReviewItemComponent,
+    FormSwitchComponent,
   ],
   imports: [CommonModule, IonicModule],
   exports: [
@@ -29,6 +31,7 @@ import { ReviewItemComponent } from './review-item/review-item.component';
     AppBarComponent,
     CardProductorComponent,
     ReviewItemComponent,
+    FormSwitchComponent,
   ],
 })
-export class WidgetsModule {}
+export class WidgetsModule { }
