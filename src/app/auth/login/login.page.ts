@@ -23,7 +23,7 @@ export class LoginPage {
     private auth: AuthService,
     private router: Router,
     private nav: NavController,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
   ) {
     this.authRequest = {
       username: '',
@@ -58,6 +58,10 @@ export class LoginPage {
         console.warn(`Authentication failed: ${err.message}`);
       },
     });
+  }
+
+  goTo(path: string) {
+    this.nav.navigateForward(path, { animated: false });
   }
 
   displayRegisterForm() {
