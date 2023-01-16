@@ -60,4 +60,9 @@ export class ProductService {
     const products = user.products;
     return products;
   }
+
+  async getByCategory(category: string) {
+      const products = await this.http.get('products?category=' + category);
+      return products;
+  }
 }

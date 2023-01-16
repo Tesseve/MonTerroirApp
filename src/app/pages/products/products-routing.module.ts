@@ -9,6 +9,20 @@ const routes: Routes = [
     component: ProductsPage,
   },
   {
+    path: 'create',
+    loadChildren: () =>
+      import('./create-product/create-product.module').then(
+        (m) => m.CreateProductPageModule
+      ),
+  },
+  {
+    path: ':id/edit',
+    loadChildren: () =>
+      import('./edit-product/edit-product.module').then(
+        (m) => m.EditProductPageModule
+      ),
+  },
+  {
     path: ':id',
     loadChildren: () =>
       import('./product/product.module').then((m) => m.ProductPageModule),

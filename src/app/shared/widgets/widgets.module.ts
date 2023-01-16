@@ -10,6 +10,9 @@ import { AppBarComponent } from './app-bar/app-bar.component';
 import { IonicModule } from '@ionic/angular';
 import { CardProductorComponent } from './card-productor/card-productor.component';
 import { ReviewItemComponent } from './review-item/review-item.component';
+import { FiltreProductComponent } from './filtre-product/filtre-product.component';
+import { FormProductComponent } from './forms/form-product/form-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,8 +24,10 @@ import { ReviewItemComponent } from './review-item/review-item.component';
     CardProductorComponent,
     ReviewItemComponent,
     FormSwitchComponent,
+    FiltreProductComponent,
+    FormProductComponent,
   ],
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, FormsModule, ReactiveFormsModule],
   exports: [
     FormInputTextComponent,
     ButtonLoginComponent,
@@ -32,6 +37,8 @@ import { ReviewItemComponent } from './review-item/review-item.component';
     CardProductorComponent,
     ReviewItemComponent,
     FormSwitchComponent,
+    FiltreProductComponent,
+    FormProductComponent,
   ],
 })
 export class WidgetsModule { }

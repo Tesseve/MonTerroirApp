@@ -1,5 +1,11 @@
 <ion-content>
-    <app-bar title="Liste des produits"></app-bar>
+    <app-bar title="Liste des produits">
+        <ion-buttons slot="end">
+            <ion-button (click)="goToCreateProduct()">
+                <ion-icon name="add"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </app-bar>
 
     <!-- Search bar -->
 
