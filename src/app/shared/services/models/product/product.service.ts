@@ -20,7 +20,7 @@ export class ProductService {
     return products;
   }
 
-  async get(id: number, { forceFetchio = false } = {}) {
+  async get(id: string, { forceFetchio = false } = {}) {
     let product: Product | undefined = this.products.find(
       (product) => product._id === id
     );
@@ -49,7 +49,7 @@ export class ProductService {
     return updatedProduct;
   }
 
-  async delete(id: number) {
+  async delete(id: string) {
     await this.http.delete(`products/${id}`);
     this.products = this.products.filter((product) => product._id !== id);
   }

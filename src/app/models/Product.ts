@@ -3,7 +3,7 @@ import { Image } from './Image';
 import { Productor } from './Productor';
 
 export type Product = {
-  _id: number;
+  _id: string;
   name: string;
   description: string;
   price: number;
