@@ -6,3 +6,8 @@ export type Conversation = {
   name: string;
   users: User[];
 };
+
+export type ConversationCreating = {
+  name: string;
+  users: string[];
+};

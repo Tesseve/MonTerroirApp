@@ -47,7 +47,7 @@ export class ExplorePage implements OnInit {
   }
 
   goToProductor(productor: Productor) {
-    this.navController.navigateForward(`productor/${productor.id}`, {
+    this.navController.navigateForward(`productors/${productor._id}`, {
       animated: false,
     });
   }

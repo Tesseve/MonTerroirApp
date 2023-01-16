@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Conversation } from 'src/app/models/Conversation';
+import {
+  Conversation,
+  ConversationCreating,
+} from 'src/app/models/Conversation';
 import { HttpService } from '../../http/http.service';
 import { Message } from 'src/app/models/Message';
+import { Productor } from 'src/app/models/Productor';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +38,7 @@ export class ConversationService {
     return conversation;
   }
 
-  async create(conversation: Conversation) {
+  async create(conversation: ConversationCreating) {
     const newConversation = await this.http.post('conversations', conversation);
     this.conversations.push(newConversation);
     return newConversation;
@@ -73,5 +78,14 @@ export class ConversationService {
     );
 
     return newMessage as Message;
+  }
+
+  async initialize(productor: Productor): Promise<Conversation | undefined> {
+    const creatingConversation: ConversationCreating = {
+      name: productor.username,
+      users: [productor._id],
+    };
+    const conv = await this.create(creatingConversation);
+    return conv;
   }
 }

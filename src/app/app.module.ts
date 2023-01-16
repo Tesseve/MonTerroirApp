@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { LoaderInterceptorService } from './shared/services/loader/loader-interceptor.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,11 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorService,
       multi: true,
     },
   ],

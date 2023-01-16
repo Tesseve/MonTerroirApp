@@ -1,0 +1,30 @@
+<ion-content *ngIf="productor">
+    <app-bar [title]="productor.username"></app-bar>
+
+    <img [src]="productor.images[0].url" alt="productor.username" class="header-image" />
+
+    <div class="flex">
+        <div class="flex-1">
+            <h1>{{ productor.username }}</h1>
+        </div>
+        <div class="flex-1">
+            <h2>Map</h2>
+
+            <div class="contact-button" (click)="contact()">
+                <div>
+                    Contact
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <ion-list class="products-list">
+        <app-card-product class="" *ngFor="let product of productor.products" [product]="product"></app-card-product>
+    </ion-list>
+
+    <ion-list>
+        <app-review-item *ngFor="let review of productor.reviews" [review]="review"></app-review-item>
+    </ion-list>
+
+</ion-content>

@@ -50,6 +50,34 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'productors',
+        loadChildren: () =>
+          import('../pages/productors/productors.module').then(
+            (m) => m.ProductorsPageModule
+          ),
+      },
+      {
+        path: 'my-products',
+        loadChildren: () =>
+          import('../pages/my-products/my-products.module').then(
+            (m) => m.MyProductsPageModule
+          ),
+      },
+      {
+        path: 'my-reviews',
+        loadChildren: () =>
+          import('../pages/my-reviews/my-reviews.module').then(
+            (m) => m.MyReviewsPageModule
+          ),
+      },
+      {
+        path: 'products',
+        loadChildren: () =>
+          import('../pages/products/products.module').then(
+            (m) => m.ProductsPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

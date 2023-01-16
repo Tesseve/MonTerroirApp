@@ -37,9 +37,9 @@ export class ProductorService {
     return productors;
   }
 
-  async get(id: number, { forceFetchio = false } = {}) {
+  async get(id: string, { forceFetchio = false } = {}) {
     let productor: Productor | undefined = this.productors.find(
-      (productor) => productor.id === id
+      (productor) => productor._id === id
     );
     if (productor && !forceFetchio) {
       return productor;
@@ -57,19 +57,19 @@ export class ProductorService {
 
   async update(productor: Productor) {
     const updatedProductor = await this.http.put(
-      `productors/${productor.id}`,
+      `productors/${productor._id}`,
       productor
     );
     this.productors = this.productors.map((productor) =>
-      productor.id === updatedProductor.id ? updatedProductor : productor
+      productor._id === updatedProductor.id ? updatedProductor : productor
     );
     return updatedProductor;
   }
 
-  async delete(id: number) {
+  async delete(id: string) {
     await this.http.delete(`productors/${id}`);
     this.productors = this.productors.filter(
-      (productor) => productor.id !== id
+      (productor) => productor._id !== id
     );
   }
 }
