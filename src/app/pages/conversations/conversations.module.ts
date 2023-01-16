@@ -8,6 +8,7 @@ import { ConversationsPageRoutingModule } from './conversations-routing.module';
 
 import { ConversationsPage } from './conversations.page';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
+import { ConversationNamePipe } from 'src/app/pipes/conversation-name.pipe';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     IonicModule,
     ConversationsPageRoutingModule,
     WidgetsModule,
+    ConversationNamePipe,
   ],
   declarations: [ConversationsPage],
 })
