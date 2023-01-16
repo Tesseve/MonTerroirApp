@@ -27,7 +27,7 @@
             <ion-label position="floating">Catégorie</ion-label>
             <ion-select formControlName="category">
                 <ion-select-option *ngFor="let category of categories" [value]="category">
-                    {{ category }}
+                    {{ category.name }}
                 </ion-select-option>
             </ion-select>
             <ion-text color="danger" *ngIf="form.get('category')?.touched && form.get('category')?.errors?.['required']">

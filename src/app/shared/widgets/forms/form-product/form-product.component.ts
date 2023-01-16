@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/Product';
+import { CategoryService } from 'src/app/shared/services/models/category/category.service';
 
 @Component({
   selector: 'app-form-product',
@@ -13,7 +14,7 @@ export class FormProductComponent implements OnInit {
   form: FormGroup;
   categories: any[] = [];
 
-  constructor() {
+  constructor(private categoryService: CategoryService) {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
@@ -24,9 +25,14 @@ export class FormProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.product);
+    this.init();
+  }
 
-    //fill datas with product
+  async init() {
+    const categories = await this.categoryService.getAll();
+    this.categories = categories;
+
+    console.log(this.product);
     if (this.product) {
       this.form.patchValue({
         name: this.product.name,
@@ -36,7 +42,6 @@ export class FormProductComponent implements OnInit {
       });
     }
   }
-
   submit() {
     console.log(this.form.value);
   }
