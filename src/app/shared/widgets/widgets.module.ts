@@ -9,6 +9,7 @@ import { AppBarComponent } from './app-bar/app-bar.component';
 import { IonicModule } from '@ionic/angular';
 import { CardProductorComponent } from './card-productor/card-productor.component';
 import { ReviewItemComponent } from './review-item/review-item.component';
+import { FiltreProductComponent } from './filtre-product/filtre-product.component';
 import { FormProductComponent } from './forms/form-product/form-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppBarComponent,
     CardProductorComponent,
     ReviewItemComponent,
+    FiltreProductComponent,
     FormProductComponent,
   ],
   imports: [CommonModule, IonicModule, FormsModule, ReactiveFormsModule],
@@ -32,6 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppBarComponent,
     CardProductorComponent,
     ReviewItemComponent,
+    FiltreProductComponent,
     FormProductComponent,
   ],
 })
