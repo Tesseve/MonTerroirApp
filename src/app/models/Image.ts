@@ -1,7 +1,5 @@
-
-
 export type Image = {
-  id: number;
-  date: Date,
-  url: string,
+  _id: string;
+  date: Date;
+  url: string;
 };

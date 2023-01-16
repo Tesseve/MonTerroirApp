@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
+import { ProductService } from '../shared/services/models/product/product.service';
 import { WebsocketService } from '../shared/services/websocket.service';
 
 declare type PageTab = {
@@ -20,8 +21,7 @@ export class LayoutPage implements OnInit, OnDestroy {
 
   constructor(
     private auth: AuthService,
-    private router: Router,
-    private WebsocketService: WebsocketService
+    private productService: ProductService
   ) {
     this.tabs = [
       { title: 'Accueil', icon: 'home-sharp', path: 'home' },

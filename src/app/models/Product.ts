@@ -9,7 +9,7 @@ export type Product = {
   price: number;
   images: Image[];
   productor: Productor;
-  category: Category;
+  categories: Category[];
   createdAt: Date;
   updatedAt: Date;
 };

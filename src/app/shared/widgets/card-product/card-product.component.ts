@@ -13,9 +13,7 @@ export class CardProductComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-    console.log(this.product);
-  }
+  ngOnInit() {}
 
   goToProduct(product: Product) {
     this.router.navigate(['products', product._id]);

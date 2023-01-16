@@ -35,20 +35,21 @@ export class HttpService {
     );
   }
 
-  async post(path: string, body: any): Promise<any> {
+  async post(path: string, body: any, headers?: any): Promise<any> {
     return await firstValueFrom(
       this.httpClient.post(this.url(path), body, {
         responseType: 'json',
-        headers: await this.getHeaders(),
+        headers: { ...(await this.getHeaders()), ...headers },
       })
     );
   }
 
-  async put(path: string, body: any): Promise<any> {
+  async put(path: string, body: any, headers?: any): Promise<any> {
+    console.log('put', path, body, headers);
     return await firstValueFrom(
       this.httpClient.put(this.url(path), body, {
         responseType: 'json',
-        headers: await this.getHeaders(),
+        headers: { ...(await this.getHeaders()), ...headers },
       })
     );
   }

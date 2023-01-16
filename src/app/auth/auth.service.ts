@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { from, Observable, ReplaySubject } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { firstValueFrom, from, Observable, ReplaySubject } from 'rxjs';
 import { delayWhen, map } from 'rxjs/operators';
 
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { AuthRegisterRequest } from '../models/AuthRegisterRequest';
 import { AuthRequest } from '../models/AuthRequest';
 import { AuthResponse } from '../models/AuthResponse';
 import { User } from '../models/User';
+import { ProductService } from '../shared/services/models/product/product.service';
 
 const API_URL = environment.apiURL;
 
@@ -96,5 +97,20 @@ export class AuthService {
 
   private saveAuth$(auth: AuthResponse): Observable<void> {
     return from(this.storage.set('auth', auth));
+  }
+
+  async reloadUser() {
+    const authUrl = `${API_URL}auth/me`;
+    return this.http.get<AuthResponse>(authUrl).pipe(
+      delayWhen((auth) => {
+        return this.saveAuth$(auth);
+      }),
+      map((auth) => {
+        this.#auth$.next(auth);
+        this.#user = auth.user;
+        this.#token = auth.accessToken;
+        return auth.user;
+      })
+    );
   }
 }
