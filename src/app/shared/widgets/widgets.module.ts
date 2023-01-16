@@ -10,6 +10,7 @@ import { IonicModule } from '@ionic/angular';
 import { CardProductorComponent } from './card-productor/card-productor.component';
 import { ReviewItemComponent } from './review-item/review-item.component';
 import { FormProductComponent } from './forms/form-product/form-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FormProductComponent } from './forms/form-product/form-product.componen
     ReviewItemComponent,
     FormProductComponent,
   ],
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, FormsModule, ReactiveFormsModule],
   exports: [
     FormInputTextComponent,
     ButtonLoginComponent,

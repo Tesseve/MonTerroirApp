@@ -1,9 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>edit-product</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content *ngIf="product">
+    <app-bar title="Editer le produit {{ product.name }}"></app-bar>
 
-<ion-content>
+
+    <app-form-product [product]="product" />
+
 
 </ion-content>

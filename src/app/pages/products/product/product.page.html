@@ -2,5 +2,5 @@
     <app-bar [title]="product.name"></app-bar>
 
 
-
+    <ion-icon *ngIf="canEdit" name="create" size="large" routerLink="edit"></ion-icon>
 </ion-content>
