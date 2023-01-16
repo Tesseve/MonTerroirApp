@@ -1,20 +1,27 @@
 <ion-content>
-    <app-bar title="Liste des produits"></app-bar>
+  <app-bar title="Liste des produits"></app-bar>
 
-    <!-- Search bar -->
-
+  <!-- Search bar -->
+  <div class="listeProduitHeader">
     <div class="search-bar">
-        <ion-searchbar class="w-1/2" (ionInput)="search($event)"></ion-searchbar>
-        <ion-button (click)="goToMap()">
-            <ion-icon name="map" style="font-size:x-large"></ion-icon>
-        </ion-button>
+      <ion-searchbar class="w-1/2" (ionInput)="search($event)"></ion-searchbar>
+      <ion-button (click)="goToMap()">
+        <ion-icon name="map" style="font-size: x-large"></ion-icon>
+      </ion-button>
     </div>
 
+    <!-- Filter -->
+    <h2>Filtres</h2>
+    <app-filtre-product></app-filtre-product>
+  </div>
 
-    <ion-list>
-        <div class="productor-list">
-            <app-card-productor *ngFor="let productor of productors" [productor]="productor" (click)="goToProductor(productor)" class="productor-item"></app-card-productor>
-        </div>
-    </ion-list>
+  <!-- List of products -->
 
+  <ion-list class="cardFelx-listeProduct">
+    <app-card-product
+      class="mesAchatsHome"
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-card-product>
+  </ion-list>
 </ion-content>
