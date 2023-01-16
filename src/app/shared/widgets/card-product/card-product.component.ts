@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/shared/services/models/product/product.service';
-
 
 @Component({
   selector: 'app-card-product',
@@ -9,14 +9,15 @@ import { ProductService } from 'src/app/shared/services/models/product/product.s
   styleUrls: ['./card-product.component.scss'],
 })
 export class CardProductComponent implements OnInit {
-  @Input() product?:Product;
+  @Input() product?: Product;
 
-  constructor() {
-    
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
-   console.log(this.product);
+    console.log(this.product);
   }
 
+  goToProduct(product: Product) {
+    this.router.navigate(['products', product._id]);
+  }
 }
