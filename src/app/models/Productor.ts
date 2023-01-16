@@ -1,5 +1,6 @@
 import { Image } from './Image';
 import { Product } from './Product';
+import { Review } from './Review';
 
 export type Productor = {
   _id: string;
@@ -11,4 +12,5 @@ export type Productor = {
   };
 
   products: Product[];
+  reviews: Review[];
 };

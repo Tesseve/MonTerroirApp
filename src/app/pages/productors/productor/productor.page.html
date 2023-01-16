@@ -6,8 +6,6 @@
     <div class="flex">
         <div class="flex-1">
             <h1>{{ productor.username }}</h1>
-            <h2>{{ productor.username }}</h2>
-            <h3>{{ productor.username }}</h3>
         </div>
         <div class="flex-1">
             <h2>Map</h2>
@@ -21,8 +19,12 @@
         </div>
     </div>
 
-    <ion-list class="">
+    <ion-list class="products-list">
         <app-card-product class="" *ngFor="let product of productor.products" [product]="product"></app-card-product>
+    </ion-list>
+
+    <ion-list>
+        <app-review-item *ngFor="let review of productor.reviews" [review]="review"></app-review-item>
     </ion-list>
 
 </ion-content>
