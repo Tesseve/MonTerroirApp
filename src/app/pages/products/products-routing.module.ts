@@ -16,6 +16,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: ':id/edit',
+    loadChildren: () =>
+      import('./edit-product/edit-product.module').then(
+        (m) => m.EditProductPageModule
+      ),
+  },
+  {
     path: ':id',
     loadChildren: () =>
       import('./product/product.module').then((m) => m.ProductPageModule),
