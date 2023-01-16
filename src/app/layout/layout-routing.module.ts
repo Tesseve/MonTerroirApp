@@ -57,10 +57,6 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'create-product',
-        loadChildren: () => import('../pages/create-product/create-product.module').then( m => m.CreateProductPageModule)
-      },
-      {
         path: 'my-products',
         loadChildren: () =>
           import('../pages/my-products/my-products.module').then(

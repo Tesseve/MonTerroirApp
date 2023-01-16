@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { CreateProductPageRoutingModule } from './create-product-routing.module';
 
 import { CreateProductPage } from './create-product.page';
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CreateProductPageRoutingModule
+    CreateProductPageRoutingModule,
+    WidgetsModule,
   ],
-  declarations: [CreateProductPage]
+  declarations: [CreateProductPage],
 })
 export class CreateProductPageModule {}
