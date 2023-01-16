@@ -19,7 +19,7 @@ export class MyProductsPage implements OnInit {
   }
 
   async init() {
-    this.products = this.productService.getMine();
+    this.products = await this.productService.getMine();
     console.log(this.products);
   }
 

@@ -11,6 +11,8 @@ export class ProductService {
 
   products: Product[] = [];
 
+  myProducts: Product[] = [];
+
   async getAll({ forceFetchio = false } = {}) {
     if (this.products.length && !forceFetchio) {
       return this.products;
@@ -32,17 +34,14 @@ export class ProductService {
     return product;
   }
 
-  async create(product: Product) {
-    const newProduct = await this.http.post('products', product);
+  async create(value: any) {
+    const newProduct = await this.http.post('products', value);
     this.products.push(newProduct);
     return newProduct;
   }
 
-  async update(product: Product) {
-    const updatedProduct = await this.http.put(
-      `products/${product._id}`,
-      product
-    );
+  async update(productID: string, value: any) {
+    const updatedProduct = await this.http.put(`products/${productID}`, value);
     this.products = this.products.map((product) =>
       product._id === updatedProduct.id ? updatedProduct : product
     );
@@ -54,10 +53,12 @@ export class ProductService {
     this.products = this.products.filter((product) => product._id !== id);
   }
 
-  getMine(): Product[] | undefined {
-    const user = this.authService.getUser();
-    if (!user) return undefined;
-    const products = user.products;
+  async getMine({ forceFetchio = false } = {}): Promise<Product[] | undefined> {
+    if (this.myProducts.length && !forceFetchio) {
+      return this.myProducts;
+    }
+    const products = await this.http.get('products/mine');
+    this.myProducts = products;
     return products;
   }
 }
