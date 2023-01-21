@@ -50,6 +50,7 @@ export class ProductService {
 
   async delete(id: string) {
     await this.http.delete(`products/${id}`);
+    this.myProducts = this.myProducts.filter((product) => product._id !== id);
     this.products = this.products.filter((product) => product._id !== id);
   }
 

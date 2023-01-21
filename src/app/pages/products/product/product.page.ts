@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/shared/services/models/product/product.service';
@@ -10,13 +10,15 @@ import { ProductService } from 'src/app/shared/services/models/product/product.s
   styleUrls: ['./product.page.scss'],
 })
 export class ProductPage implements OnInit {
+
   product?: Product;
   canEdit: boolean = false;
+  canDelete: boolean = false;
 
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private authService: AuthService
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -30,12 +32,18 @@ export class ProductPage implements OnInit {
     console.log(this.product);
 
     if (this.product) {
-      const userProducts = this.authService.getUser()?.products;
-      if (userProducts) {
-        this.canEdit = userProducts
+      await this.productService.getMine({ forceFetchio: true });
+      console.log(this.productService.myProducts);
+        this.canEdit = this.productService.myProducts
           .map((p) => p._id)
           .includes(this.product._id);
-      }
+        this.canDelete = this.canEdit;
     }
+  }
+
+  async delete() {
+    if(!this.product) return;
+    await this.productService.delete(this.product._id);
+    this.router.navigate(['/my-products']);
   }
 }

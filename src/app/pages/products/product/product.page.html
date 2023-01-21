@@ -3,4 +3,6 @@
 
 
     <ion-icon *ngIf="canEdit" name="create" size="large" routerLink="edit"></ion-icon>
+
+    <ion-icon *ngIf="canDelete" name="trash" size="large" (click)="delete()"></ion-icon>
 </ion-content>
