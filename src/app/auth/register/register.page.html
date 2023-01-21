@@ -1,29 +1,48 @@
 <div class="content">
-    <img class="myPhotoCircle" src="\assets\imageBaseMonTerroir.png" alt="Terroir avec une caisse des légumes" />
+  <img
+    class="myPhotoCircle"
+    src="\assets\imageBaseMonTerroir.png"
+    alt="Terroir avec une caisse des légumes"
+  />
 
-    <h1>Inscription</h1>
+  <h1>Inscription</h1>
 
-    <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
-
-        <div>
-            <p>Role</p>
-        </div>
-
-        <app-form-switch label="Role" (valueChange)="setRole($event)">
-        </app-form-switch>
-
-        <app-form-input-text label="Nom d'utilisateur" (valueChange)="setUsername($event)"
-            placeholder=""></app-form-input-text>
-        <br>
-        <app-form-input-text label="Mot de passe" type="password" (valueChange)="setPassword($event)"
-            placeholder=""></app-form-input-text>
-    </form>
-
+  <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
     <div>
-        <app-button-login class="button" label="Inscription"
-            (click)="onSubmit(loginForm)">Inscription</app-button-login>
-        <app-button-login class="button" type="secondary" label="connexion" (click)="goTo('login')"></app-button-login>
+      <p>Role</p>
     </div>
 
+    <app-form-switch label="Role" (valueChange)="setRole($event)">
+    </app-form-switch>
 
+    <app-form-input-text
+      label="Nom d'utilisateur"
+      (valueChange)="setUsername($event)"
+      placeholder=""
+    ></app-form-input-text>
+    <br />
+    <app-form-input-text
+      label="Mot de passe"
+      type="password"
+      (valueChange)="setPassword($event)"
+      placeholder=""
+    ></app-form-input-text>
+
+    <span (click)="takePicture()" class="button">Prendre une photo</span>
+  </form>
+
+  <div>
+    <app-button-login
+      class="button"
+      label="Inscription"
+      (click)="onSubmit(loginForm)"
+      >Inscription</app-button-login
+    >
+    <app-button-login
+      class="button"
+      type="secondary"
+      label="connexion"
+      (click)="goTo('login')"
+    ></app-button-login>
+  </div>
 </div>
