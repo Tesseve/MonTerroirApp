@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { AuthRegisterRequest } from 'src/app/models/AuthRegisterRequest';
 import { AuthService } from '../auth.service';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import { ToastService } from 'src/app/shared/services/toast/toast.service';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,8 @@ export class RegisterPage {
   constructor(
     private auth: AuthService,
     private router: Router,
-    private nav: NavController
+    private nav: NavController,
+    private toastService: ToastService
   ) {
     this.authRequest = {
       username: '',
@@ -57,9 +59,11 @@ export class RegisterPage {
     // Perform the authentication request to the API.
     this.auth.register$(this.authRequest).subscribe({
       next: () => this.router.navigate(['/'], { replaceUrl: true }),
-      error: (err) => {
+      error: async (err) => {
         this.loginError = true;
-        console.warn(`Authentication failed: ${err.message}`);
+        await this.toastService.presentErrorToast(
+          'Registration failed : ' + err.error.message
+        );
       },
     });
   }

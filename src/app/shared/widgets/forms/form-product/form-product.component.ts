@@ -6,6 +6,7 @@ import { Category } from 'src/app/models/Category';
 import { Product } from 'src/app/models/Product';
 import { CategoryService } from 'src/app/shared/services/models/category/category.service';
 import { ProductService } from 'src/app/shared/services/models/product/product.service';
+import { ToastService } from 'src/app/shared/services/toast/toast.service';
 
 @Component({
   selector: 'app-form-product',
@@ -23,7 +24,8 @@ export class FormProductComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ) {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -57,6 +59,7 @@ export class FormProductComponent implements OnInit {
     if (this.form.invalid) {
       console.log('Invalid form');
       console.log(this.form.value);
+      await this.toastService.presentErrorToast('Invalid form');
       return;
     }
 
@@ -83,23 +86,5 @@ export class FormProductComponent implements OnInit {
   onImageUploaded(data: string) {
     this.images = [];
     this.images.push(data);
-  }
-
-  onFileChange($event: Event) {
-    const input = $event.target as HTMLInputElement;
-    const files = input.files;
-    console.log(files);
-
-    if (files) {
-      //converti i file in base64
-      for (let i = 0; i < files.length; i++) {
-        const reader = new FileReader();
-        reader.readAsDataURL(files[i]);
-        reader.onload = () => {
-          reader.result;
-          this.images.push(reader.result as string);
-        };
-      }
-    }
   }
 }
