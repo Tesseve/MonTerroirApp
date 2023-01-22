@@ -1,49 +1,59 @@
 <div>
-    <!-- formulaire with errors for the product  -->
-    <form [formGroup]="form" (ngSubmit)="submit()" enctype="multipart/form-data">
-        <ion-item>
-            <ion-label position="floating">Nom</ion-label>
-            <ion-input formControlName="name"></ion-input>
-            <!-- Display error -->
-            <ion-text color="danger" *ngIf="form.get('name')?.touched && form.get('name')?.errors?.['required']">
-                Le nom est obligatoire
-            </ion-text>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating">Prix</ion-label>
-            <ion-input formControlName="price" type="number"></ion-input>
-            <ion-text color="danger" *ngIf="form.get('price')?.touched && form.get('price')?.errors?.['required']">
-                Le prix est obligatoire
-            </ion-text>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating">Description</ion-label>
-            <ion-textarea formControlName="description"></ion-textarea>
-            <ion-text color="danger" *ngIf="form.get('description')?.touched && form.get('description')?.errors?.['required']">
-                La description est obligatoire
-            </ion-text>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating">Catégories</ion-label>
-            <ion-select formControlName="categories" multiple>
-                <ion-select-option *ngFor="let category of categories" [value]="category._id">
-                    {{ category.name }}
-                </ion-select-option>
-            </ion-select>
-            <ion-text color="danger" *ngIf="form.get('categories')?.touched && form.get('categories')?.errors?.['required']">
-                La catégorie est obligatoire
-            </ion-text>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating">Images</ion-label>
-            <br>
-            <br>
-            <br>
-            <input formControlName="images" type="file" multiple (change)="onFileChange($event)" />
-            <ion-text color="danger" *ngIf="form.get('images')?.touched && form.get('images')?.errors?.['required']">
-                Les images sont obligatoires
-            </ion-text>
-        </ion-item>
-        <ion-button expand="block" type="submit">Sauvegarder</ion-button>
-    </form>
+  <!-- formulaire with errors for the product  -->
+  <form [formGroup]="form" (ngSubmit)="submit()" enctype="multipart/form-data">
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input formControlName="name"></ion-input>
+      <!-- Display error -->
+      <ion-text
+        color="danger"
+        *ngIf="form.get('name')?.touched && form.get('name')?.errors?.['required']"
+      >
+        Le nom est obligatoire
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prix</ion-label>
+      <ion-input formControlName="price" type="number"></ion-input>
+      <ion-text
+        color="danger"
+        *ngIf="form.get('price')?.touched && form.get('price')?.errors?.['required']"
+      >
+        Le prix est obligatoire
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+      <ion-text
+        color="danger"
+        *ngIf="form.get('description')?.touched && form.get('description')?.errors?.['required']"
+      >
+        La description est obligatoire
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Catégories</ion-label>
+      <ion-select formControlName="categories" multiple>
+        <ion-select-option
+          *ngFor="let category of categories"
+          [value]="category._id"
+        >
+          {{ category.name }}
+        </ion-select-option>
+      </ion-select>
+      <ion-text
+        color="danger"
+        *ngIf="form.get('categories')?.touched && form.get('categories')?.errors?.['required']"
+      >
+        La catégorie est obligatoire
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <app-form-input-image
+        (onImageUploaded)="onImageUploaded($event)"
+      ></app-form-input-image>
+    </ion-item>
+    <ion-button expand="block" type="submit">Sauvegarder</ion-button>
+  </form>
 </div>

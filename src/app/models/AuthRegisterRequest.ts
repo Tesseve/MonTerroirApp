@@ -6,4 +6,5 @@ export type AuthRegisterRequest = {
     type: string;
     coordinates: number[];
   };
+  images: string[];
 };

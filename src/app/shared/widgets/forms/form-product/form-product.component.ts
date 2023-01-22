@@ -80,6 +80,11 @@ export class FormProductComponent implements OnInit {
     this.router.navigate(['my-products']);
   }
 
+  onImageUploaded(data: string) {
+    this.images = [];
+    this.images.push(data);
+  }
+
   onFileChange($event: Event) {
     const input = $event.target as HTMLInputElement;
     const files = input.files;

@@ -13,6 +13,7 @@ import { ReviewItemComponent } from './review-item/review-item.component';
 import { FiltreProductComponent } from './filtre-product/filtre-product.component';
 import { FormProductComponent } from './forms/form-product/form-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormInputImageComponent } from './form-input-image/form-input-image.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormSwitchComponent,
     FiltreProductComponent,
     FormProductComponent,
+    FormInputImageComponent
   ],
   imports: [CommonModule, IonicModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -39,6 +41,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormSwitchComponent,
     FiltreProductComponent,
     FormProductComponent,
+    FormInputImageComponent
   ],
 })
 export class WidgetsModule { }

@@ -37,6 +37,7 @@ export class RegisterPage {
         type: 'Point',
         coordinates: [0, 0],
       },
+      images: [],
     };
     this.loginError = false;
   }
@@ -84,20 +85,8 @@ export class RegisterPage {
     this.authRequest.role = role;
   }
 
-  async takePicture() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
-      resultType: CameraResultType.Uri,
-    });
-
-    // image.webPath will contain a path that can be set as an image src.
-    // You can access the original file using image.path, which can be
-    // passed to the Filesystem API to read the raw data of the image,
-    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-    var imageUrl = image.webPath;
-
-    // Can be set to the src of an image now
-    console.log('image', imageUrl);
+  onImageUploaded(data: string) {
+    this.authRequest.images = [];
+    this.authRequest.images.push(data);
   }
 }

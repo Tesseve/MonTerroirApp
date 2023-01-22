@@ -28,7 +28,7 @@
       placeholder=""
     ></app-form-input-text>
 
-    <span (click)="takePicture()" class="button">Prendre une photo</span>
+    <app-form-input-image (onImageUploaded)="onImageUploaded($event)" />
   </form>
 
   <div>
