@@ -12,7 +12,9 @@
 
     <!-- Filter -->
     <h2>Filtres</h2>
-    <app-filtre-product></app-filtre-product>
+    <app-filtre-product
+      (onCategorieSelected)="onCategorySelected($event)"
+    ></app-filtre-product>
   </div>
 
   <!-- List of products -->

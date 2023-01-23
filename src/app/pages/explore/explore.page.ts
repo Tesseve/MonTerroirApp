@@ -5,6 +5,7 @@ import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/shared/services/models/product/product.service';
 import { PositionService } from 'src/app/shared/services/gps/position.service';
 import { ProductorService } from 'src/app/shared/services/models/productor/productor.service';
+import { Category } from 'src/app/models/Category';
 
 @Component({
   selector: 'app-explore',
@@ -12,28 +13,22 @@ import { ProductorService } from 'src/app/shared/services/models/productor/produ
   styleUrls: ['./explore.page.scss'],
 })
 export class ExplorePage implements OnInit {
-  
-    products?: Product[];
+  products?: Product[];
 
   constructor(
     private navController: NavController,
-  
-    private productService: ProductService,
+
+    private productService: ProductService
   ) {}
 
   ngOnInit() {
     this.init();
-    
   }
 
   private async init() {
     this.products = await this.productService.getAll({
-      forceFetchio: true
+      forceFetchio: true,
     });
-
-    
-
-   
   }
 
   goToMap() {
@@ -43,7 +38,6 @@ export class ExplorePage implements OnInit {
   async search($event: any) {
     const text = $event.target.value;
     console.log(text);
-
   }
 
   goToProductor(productor: Productor) {
@@ -52,8 +46,12 @@ export class ExplorePage implements OnInit {
     });
   }
 
-  getCat(){
-    this.productService.getByCategory('légumes');
-    
+  onCategorySelected($event: Category) {
+    console.log($event);
+    this.getProductsByCategory($event);
+  }
+
+  async getProductsByCategory(category: Category) {
+    this.products = await this.productService.getByCategory(category._id);
   }
 }

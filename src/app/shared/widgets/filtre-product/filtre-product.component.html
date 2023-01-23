@@ -1,13 +1,24 @@
 <div class="myCardFiltre">
-  <a href="#" class="myFruit">
+  <div *ngFor="let categorie of categories">
+    <div
+      class="filtre"
+      [ngClass]="{ filtreActive: categorie._id === selectedCategorieId }"
+      (click)="selectCategorie(categorie)"
+    >
+      <img class="imgFiltre" src="{{ categorie.image }}" width="50px" />
+      <p>{{ categorie.name }}</p>
+    </div>
+  </div>
+
+  <!-- <a href="#" class="myFruit">
     <div class="fruit">
       <div class="imgFruit"></div>
       <p>Fruit</p>
     </div>
   </a>
-  <a href="#" class="myLegume">
-    <div class="legume filtreActive">
-      <div class="imgLegume filtreActive"></div>
+  <a href="#" class="myLegume filtreActive">
+    <div class="legume">
+      <div class="imgLegume"></div>
       <p>Legume</p>
     </div>
   </a>
@@ -34,5 +45,5 @@
       <div class="imgAutre"></div>
       <p>Autre</p>
     </div>
-  </a>
+  </a> -->
 </div>

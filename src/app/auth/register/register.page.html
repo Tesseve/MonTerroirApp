@@ -5,44 +5,44 @@
     alt="Terroir avec une caisse des légumes"
   />
 
-  <h1>Inscription</h1>
+  <div class="scrollable">
+    <h1>Inscription</h1>
 
-  <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+    <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+      <app-form-switch label="Role" (valueChange)="setRole($event)">
+      </app-form-switch>
+
+      <app-form-input-text
+        label="Nom d'utilisateur"
+        (valueChange)="setUsername($event)"
+        placeholder=""
+      ></app-form-input-text>
+      <br />
+      <app-form-input-text
+        label="Mot de passe"
+        type="password"
+        (valueChange)="setPassword($event)"
+        placeholder=""
+      ></app-form-input-text>
+
+      <div class="image-field">
+        <app-form-input-image (onImageUploaded)="onImageUploaded($event)" />
+      </div>
+    </form>
+
     <div>
-      <p>Role</p>
+      <app-button-login
+        class="button"
+        label="Inscription"
+        (click)="onSubmit(loginForm)"
+        >Inscription</app-button-login
+      >
+      <app-button-login
+        class="button"
+        type="secondary"
+        label="connexion"
+        (click)="goTo('login')"
+      ></app-button-login>
     </div>
-
-    <app-form-switch label="Role" (valueChange)="setRole($event)">
-    </app-form-switch>
-
-    <app-form-input-text
-      label="Nom d'utilisateur"
-      (valueChange)="setUsername($event)"
-      placeholder=""
-    ></app-form-input-text>
-    <br />
-    <app-form-input-text
-      label="Mot de passe"
-      type="password"
-      (valueChange)="setPassword($event)"
-      placeholder=""
-    ></app-form-input-text>
-
-    <app-form-input-image (onImageUploaded)="onImageUploaded($event)" />
-  </form>
-
-  <div>
-    <app-button-login
-      class="button"
-      label="Inscription"
-      (click)="onSubmit(loginForm)"
-      >Inscription</app-button-login
-    >
-    <app-button-login
-      class="button"
-      type="secondary"
-      label="connexion"
-      (click)="goTo('login')"
-    ></app-button-login>
   </div>
 </div>

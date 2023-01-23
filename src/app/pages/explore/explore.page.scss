@@ -1,34 +1,32 @@
 .search-bar {
-    display: flex;
+  display: flex;
 }
 
 .productor-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
 
 .productor-item {
-    flex: 1;
+  flex: 1;
 }
 
 .cardFelx-listeProduct {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 32vh;
-    
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 32vh;
 }
 
 .listeProduitHeader {
-    background-color: #fff;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    
+  background-color: #fff;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  /*box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;*/
 }

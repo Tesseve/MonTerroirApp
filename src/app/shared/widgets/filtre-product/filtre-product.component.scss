@@ -1,30 +1,41 @@
 .myCardFiltre {
-    background-color: #fff;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    margin: 0 3% 5% 3%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 15vh;
-    border-radius: 12px;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 0 3% 5% 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 15vh;
+  border-radius: 12px;
 }
 
 .myCardFiltre a {
-    text-decoration: none;
-    color: #989C92;
+  text-decoration: none;
+  color: #989c92;
 }
 
 .filtreActive {
-    color: var(--ion-color-primary);
+  color: var(--ion-color-primary);
 }
 
+.filtre {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: center;
+}
 
+.filtreActive .imgFiltre {
+  filter: invert(60%) sepia(77%) saturate(7067%) hue-rotate(149deg)
+    brightness(95%) contrast(91%);
+}
 
+/*
 .fruit {
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: center;
 }
 
 .imgFruit {
@@ -160,3 +171,4 @@
     height: 50px;
 }
 
+ */

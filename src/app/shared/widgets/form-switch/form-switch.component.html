@@ -1,8 +1,22 @@
 <form class="form">
+  <label class="label">{{ label }}</label>
   <div class="switch-field">
-    <input type="radio" id="radio-one" name="switch-one" value="client" checked (change)="onChange($event)" />
+    <input
+      type="radio"
+      id="radio-one"
+      name="switch-one"
+      value="client"
+      checked
+      (change)="onChange($event)"
+    />
     <label for="radio-one">Client</label>
-    <input type="radio" id="radio-two" name="switch-one" value="producteur" (change)="onChange($event)" />
+    <input
+      type="radio"
+      id="radio-two"
+      name="switch-one"
+      value="producteur"
+      (change)="onChange($event)"
+    />
     <label for="radio-two">Producteur</label>
   </div>
 </form>
