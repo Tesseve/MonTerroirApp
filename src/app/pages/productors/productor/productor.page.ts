@@ -34,7 +34,7 @@ export class ProductorPage implements OnInit {
   async contact() {
     if (!this.productor) return;
     const conv: Conversation | undefined =
-      await this.conversationService.initialize(this.productor);
+      await this.conversationService.initialize(this.productor._id);
 
     if (!conv) return;
     await this.router.navigate(['conversations', conv._id]);

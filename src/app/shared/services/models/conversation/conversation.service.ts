@@ -80,10 +80,11 @@ export class ConversationService {
     return newMessage as Message;
   }
 
-  async initialize(productor: Productor): Promise<Conversation | undefined> {
+  async initialize(productorID: string): Promise<Conversation | undefined> {
+    console.log('initialize', productorID);
     const creatingConversation: ConversationCreating = {
-      name: productor.username,
-      users: [productor._id],
+      name: '',
+      users: [productorID],
     };
     const conv = await this.create(creatingConversation);
     return conv;
