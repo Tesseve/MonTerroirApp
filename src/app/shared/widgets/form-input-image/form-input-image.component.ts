@@ -1,6 +1,11 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import {
+  Camera,
+  CameraResultType,
+  CameraSource,
+  CameraPluginPermissions,
+} from '@capacitor/camera';
 import { ActionSheetController } from '@ionic/angular';
 
 @Component({
@@ -41,6 +46,7 @@ export class FormInputImageComponent implements OnInit {
   }
 
   async takePicture(source: CameraSource) {
+    const permissions = await Camera.requestPermissions();
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: true,

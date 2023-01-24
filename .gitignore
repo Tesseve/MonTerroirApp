@@ -70,3 +70,6 @@ src/environments/*
 !src/environments/environment.sample.ts
 
 export/
+
+resources/ios/**/*
+resources/android/**/*
