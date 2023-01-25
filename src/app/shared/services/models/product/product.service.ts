@@ -63,8 +63,12 @@ export class ProductService {
     return products;
   }
 
-  async getByCategory(category: string) {
-      const products = await this.http.get('products?category=' + category);
-      return products;
+  async getByCategory(category: string | null) {
+    let url = 'products';
+    if (category) {
+      url += '?category=' + category;
+    }
+    const products = await this.http.get(url);
+    return products;
   }
 }

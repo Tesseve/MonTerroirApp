@@ -1,21 +1,17 @@
 <div *ngIf="user">
-    <app-bar title="Profil"></app-bar>
+  <app-bar title="Profil"></app-bar>
 
-    <h2 *ngIf="user">
-        {{user.username}}
-    </h2>
+  <h2 *ngIf="user">{{user.username}}</h2>
 
-    <ion-list *ngIf="user.type == 'Productor'">
-        <ion-item>
-            <ion-label (click)="goTo('my-products')">Mes produits</ion-label>
-        </ion-item>
+  <ion-list *ngIf="user.type == 'Productor'">
+    <ion-item>
+      <ion-label (click)="goTo('my-products')">Mes produits</ion-label>
+    </ion-item>
 
-        <ion-item>
-            <ion-label (click)="goTo('my-reviews')">Mes commentaires</ion-label>
-        </ion-item>
-
-    </ion-list>
-
+    <ion-item>
+      <ion-label (click)="goTo('my-reviews')">Mes commentaires</ion-label>
+    </ion-item>
+  </ion-list>
 </div>
 
-<ion-button (click)="logout()">Logout</ion-button>
+<ion-button (click)="logout()">Déconnexion</ion-button>

@@ -8,7 +8,7 @@ import { CategoryService } from '../../services/models/category/category.service
   styleUrls: ['./filtre-product.component.scss'],
 })
 export class FiltreProductComponent implements OnInit {
-  @Output() onCategorieSelected = new EventEmitter<Category>();
+  @Output() onCategorieSelected = new EventEmitter<Category | null>();
 
   categories: Category[] = [];
   selectedCategorieId?: string;
@@ -23,8 +23,13 @@ export class FiltreProductComponent implements OnInit {
     this.categories = categories;
   }
 
-  async selectCategorie(category: Category) {
-    this.selectedCategorieId = category._id;
+  async selectCategorie(category: Category | null) {
+    if (category?._id == this.selectedCategorieId) {
+      category = null;
+      this.selectedCategorieId = undefined;
+    } else {
+      this.selectedCategorieId = category?._id;
+    }
     this.onCategorieSelected.emit(category);
   }
 }

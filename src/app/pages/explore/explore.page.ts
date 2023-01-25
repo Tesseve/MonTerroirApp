@@ -46,12 +46,14 @@ export class ExplorePage implements OnInit {
     });
   }
 
-  onCategorySelected($event: Category) {
+  onCategorySelected($event: Category | null) {
     console.log($event);
     this.getProductsByCategory($event);
   }
 
-  async getProductsByCategory(category: Category) {
-    this.products = await this.productService.getByCategory(category._id);
+  async getProductsByCategory(category: Category | null) {
+    this.products = await this.productService.getByCategory(
+      category ? category._id : null
+    );
   }
 }

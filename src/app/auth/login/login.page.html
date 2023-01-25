@@ -1,21 +1,39 @@
 <div class="content">
-    <img class="myPhotoCircle" src="\assets\imageBaseMonTerroir.png" alt="Terroir avec une caisse des légumes" />
+  <img
+    class="myPhotoCircle"
+    src="../../../assets/imageBaseMonTerroir.png"
+    alt="Terroir avec une caisse des légumes"
+  />
 
-    <h1>Connexion</h1>
+  <h1>Connexion</h1>
 
-    <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
-        <app-form-input-text label="Nom d'utilisateur" (valueChange)="setUsername($event)"
-            placeholder=""></app-form-input-text>
-        <br>
-        <app-form-input-text label="Mot de passe" type="password" (valueChange)="setPassword($event)"
-            placeholder=""></app-form-input-text>
-    </form>
+  <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+    <app-form-input-text
+      label="Nom d'utilisateur"
+      (valueChange)="setUsername($event)"
+      placeholder=""
+    ></app-form-input-text>
+    <br />
+    <app-form-input-text
+      label="Mot de passe"
+      type="password"
+      (valueChange)="setPassword($event)"
+      placeholder=""
+    ></app-form-input-text>
+  </form>
 
-    <div>
-        <app-button-login class="button" label="Connexion" (click)="onSubmit(loginForm)">Connexion</app-button-login>
-        <app-button-login class="button" type="secondary" label="Inscription"
-            (click)="goTo('register')"></app-button-login>
-    </div>
-
-
+  <div>
+    <app-button-login
+      class="button"
+      label="Connexion"
+      (click)="onSubmit(loginForm)"
+      >Connexion</app-button-login
+    >
+    <app-button-login
+      class="button"
+      type="secondary"
+      label="Inscription"
+      (click)="goTo('register')"
+    ></app-button-login>
+  </div>
 </div>
