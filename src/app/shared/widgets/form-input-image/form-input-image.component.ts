@@ -46,7 +46,7 @@ export class FormInputImageComponent implements OnInit {
   }
 
   async takePicture(source: CameraSource) {
-    const permissions = await Camera.requestPermissions();
+    // const permissions = await Camera.requestPermissions();
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: true,

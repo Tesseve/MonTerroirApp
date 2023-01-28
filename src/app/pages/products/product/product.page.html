@@ -1,43 +1,92 @@
 <ion-content *ngIf="product">
   <app-bar [title]="product.name"></app-bar>
 
-  <ion-icon
-    *ngIf="canEdit"
-    name="create"
-    size="large"
-    routerLink="edit"
-  ></ion-icon>
-
-  <ion-icon
-    *ngIf="canDelete"
-    name="trash"
-    size="large"
-    (click)="delete()"
-  ></ion-icon>
-
   <img
     [src]="product.images[0].url"
     alt="productor.username"
     class="header-image"
   />
 
-  <div class="flex">
-    <div class="flex-1">
-      <h1>{{ product.name }}</h1>
-    </div>
-    <div class="flex-1" (click)="contact()">
-      <div class="contact-button">
-        <div>Contact</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="">
+  <div class="container">
     <div class="flex">
       <div class="flex-1">
+        <h1 class="name-value">{{ product.name }}</h1>
         <div class="price">
           <div class="price-value">{{ product.price }} CHF</div>
+          <div class="username-value">{{ product.productor.username }}</div>
         </div>
+      </div>
+      <div class="flex-1" (click)="contact()">
+        <div class="contact-button">
+          <img src="../../../../assets/icon/chatbubbles-outline-hover.png" />
+          <div>Contacter</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="flex">
+        <div class="flex-1">
+          <div class="price">
+            <!-- <div class="price-value">{{ product.price }} CHF</div>
+            <div class="username-value">{{ product.productor.username }}</div> -->
+            <div class="description-value">{{ product.description }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="multi-img-produit">
+      <img
+        [src]="product.images[0].url"
+        alt="productor.username"
+        class="multi-image"
+      />
+      <img
+        [src]="product.images[0].url"
+        alt="productor.username"
+        class="multi-image"
+      />
+      <img
+        [src]="product.images[0].url"
+        alt="productor.username"
+        class="multi-image"
+      />
+    </div>
+
+    <!-- <ion-icon
+      *ngIf="canEdit"
+      name="create"
+      size="large"
+      routerLink="edit"
+    ></ion-icon>
+
+    <ion-icon
+      *ngIf="canDelete"
+      name="trash"
+      size="large"
+      (click)="delete()"
+    ></ion-icon> -->
+
+    <div class="modif-delet-flex">
+      <div class="modif-button">
+        <ion-icon
+          *ngIf="canEdit"
+          name="create"
+          size="large"
+          routerLink="edit"
+        ></ion-icon>
+        <div>Modifier</div>
+      </div>
+
+      <div class="delet-button">
+        <ion-icon
+          *ngIf="canDelete"
+          name="trash"
+          size="large"
+          (click)="delete()"
+        ></ion-icon>
+        <div>Supprimer</div>
       </div>
     </div>
   </div>
