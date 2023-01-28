@@ -59,7 +59,10 @@ export class FormProductComponent implements OnInit {
     if (this.form.invalid) {
       console.log('Invalid form');
       console.log(this.form.value);
-      await this.toastService.presentErrorToast('Invalid form');
+
+      await this.toastService.presentErrorToast(
+        'Veuillez remplir tous les champs'
+      );
       return;
     }
 
