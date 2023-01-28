@@ -71,4 +71,9 @@ export class ProductService {
     const products = await this.http.get(url);
     return products;
   }
+
+  async getBySearch(text: string): Promise<Product[]> {
+    const products = await this.http.get(`products?search=${text}`);
+    return products as Product[];
+  }
 }

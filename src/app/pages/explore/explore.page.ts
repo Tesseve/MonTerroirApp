@@ -6,6 +6,7 @@ import { ProductService } from 'src/app/shared/services/models/product/product.s
 import { PositionService } from 'src/app/shared/services/gps/position.service';
 import { ProductorService } from 'src/app/shared/services/models/productor/productor.service';
 import { Category } from 'src/app/models/Category';
+import { LoadingService } from 'src/app/shared/services/loading/loading.service';
 
 @Component({
   selector: 'app-explore',
@@ -17,7 +18,7 @@ export class ExplorePage implements OnInit {
 
   constructor(
     private navController: NavController,
-
+    private loadingController: LoadingService,
     private productService: ProductService
   ) {}
 
@@ -36,8 +37,12 @@ export class ExplorePage implements OnInit {
   }
 
   async search($event: any) {
+    this.loadingController.forceHidingLoader();
     const text = $event.target.value;
     console.log(text);
+    this.products = await this.productService.getBySearch(text);
+    console.log(this.products);
+    this.loadingController.forceDisplayingLoader();
   }
 
   goToProductor(productor: Productor) {
