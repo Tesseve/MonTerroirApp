@@ -18,9 +18,7 @@ export class ProductorPage implements OnInit {
     private productorService: ProductorService,
     private conversationService: ConversationService,
     private router: Router
-  ) {
-    this.init();
-  }
+  ) {}
 
   async init() {
     const id = (await firstValueFrom(this.activeRoute.params))['id'];
@@ -29,7 +27,9 @@ export class ProductorPage implements OnInit {
     console.log('productor', this.productor);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.init();
+  }
 
   async contact() {
     if (!this.productor) return;

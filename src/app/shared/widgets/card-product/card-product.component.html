@@ -1,18 +1,30 @@
 <div class="testMargin myBackgroundCard">
-    <div class="myCardProduct" *ngIf="product" (click)="goToProduct(product)">
-        <img class="imgProduct" *ngIf="product.images.length > 0" src="{{ product.images[0].url }}" />
-        <div class="containerNameFavoris">
-            <p class="nameProduct">{{ product.name }}</p>
-            <!-- <div class="addFavoris"></div> -->
-            <!-- <ion-icon name="heart"></ion-icon> -->
-        </div>
-        <div class="flexLove">
-            <p>CHF {{ product.price }}.-</p>
-            <a href="#"><img src="../../../../assets/icon/heart-outline.png" alt="ajouter au favoris" /></a>
-        </div>
-        <div class="flexChat">
-            <p>Disponible</p>
-            <a href="#"><img src="../../../../assets/icon/chatbubbles-outline.png" alt="Contacter le producteur" /></a>
-        </div>
+  <div class="myCardProduct" *ngIf="product" (click)="goToProduct(product)">
+    <img
+      class="imgProduct"
+      *ngIf="product.images && product.images.length > 0"
+      src="{{ product.images[0].url }}"
+    />
+    <div class="containerNameFavoris">
+      <p class="nameProduct">{{ product.name }}</p>
+      <!-- <div class="addFavoris"></div> -->
+      <!-- <ion-icon name="heart"></ion-icon> -->
     </div>
+    <div class="flexLove">
+      <p>CHF {{ product.price }}.-</p>
+      <a href="#"
+        ><img
+          src="../../../../assets/icon/heart-outline.png"
+          alt="ajouter au favoris"
+      /></a>
+    </div>
+    <div class="flexChat">
+      <p>Disponible</p>
+      <a href="#"
+        ><img
+          src="../../../../assets/icon/chatbubbles-outline.png"
+          alt="Contacter le producteur"
+      /></a>
+    </div>
+  </div>
 </div>

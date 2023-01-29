@@ -11,11 +11,10 @@ export class CardProductorComponent implements OnInit {
   @Input() productor?: Productor;
   constructor(private router: Router) {}
 
-  ngOnInit() {
-    console.log(this.productor);
-  }
+  ngOnInit() {}
 
-  goToProductor() {
-    this.router.navigate(['productors', this.productor?._id]);
+  async goToProductor() {
+    if (!this.productor) return;
+    await this.router.navigate(['productors', this.productor._id]);
   }
 }
